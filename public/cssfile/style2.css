@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: navy;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 50px rgb(0, 0, 8);
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: black;
+}
+
+.container .desc h5 {
+    color: gray !important;
+    font-weight: normal !important;
+}
+
+.container form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 3 - 20px);
+}
+
+.user-details .input-box input,
+.user-details .input-box textarea,
+.user-details .input-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+}
+
+form .gender-details,
+form .user-details .input-box.select-box {
+    width: 70%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+form .gender-details .category {
+    display: flex;
+    height: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container form .button {
+    text-align: right;
+}
+
+.container form .button a {
+    text-decoration: none;
+}
+
+.container form .button input {
+    padding: 10px 20px;
+    background-color: #0C356A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.container form .button input:hover {
+    color: rgb(253, 253, 253);
+    background-color: #2C7CE4;
+    transform: scale(1.05);
+}
