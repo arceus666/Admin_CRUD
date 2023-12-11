@@ -30,10 +30,15 @@
                         <label for="password"><i class="fa-solid fa-lock"></i>Password</label>
                     </div>
                     <div class="input-field">
-                        <a href="/dashboard" class="btn btn-primary" id="signin" name="signin">Sign in</a>
+                        <a href="/employee" class="btn btn-primary" id="signin" name="signin">Sign in</a>
                     </div>
                     <div class="signin">
                         <span>Don't have an account?<a href="/register">Click here!</a></span>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="/admin">Login Admin</a>
+                        </button>
                     </div>
                 </div>
             </div>

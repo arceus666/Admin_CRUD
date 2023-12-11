@@ -59,6 +59,57 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
         </div>
+        <div>
+            <style>
+                .table {
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+               .table td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                   text-align: center;
+                }
+
+               .table tr:nth-child(even){background-color: #f2f2f2;}
+
+                .table tr:hover {background-color: #ddd;}
+
+                .table th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: navy;
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+        <table class="table">
+            <h1><center>Attendance</center></h1>
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Empployee Firstname</th>
+                <th scope="col">Employee Lastname</th>
+                <th scope="col">Employee Time in</th>
+                <th scope="col">Employee Date in</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach(\App\Models\Employee::all() as $prof)
+                <tr>
+                    <td>{{$prof->employee_id}}</td>
+                    <td>{{$prof->employee_fname}}</td>
+                    <td>{{$prof->employee_lname}}</td>
+                    <td>{{$prof->employee_timein}}</td>
+                    <td>{{$prof->employee_datein}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+        </div>
     </div>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

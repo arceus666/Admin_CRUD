@@ -40,12 +40,7 @@ class system_project extends Controller
             'upload_profile' => $request->input('upload_profile')
         ]);
 
-        if ($query) {
-
-            return back()->with('success', 'Data have been successfully inserted');
-        } else {
-            return back()->with('fail', 'something went wrong');
-        }
+        return redirect('view_employee');
     }
 
 }

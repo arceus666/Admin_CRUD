@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee</title>
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style2.css')}}">
+
 </head>
 <body>
 <div class="container">
@@ -19,7 +21,7 @@
         </div>
     @endif
     <div class="title">Add Employee Information</div>
-    <form action="add" method="post">
+    <form action="added" method="post">
         @csrf
         <div class="desc">
             <h5>Personal Details</h5>

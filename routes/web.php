@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\system_project;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LeaveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,12 +38,39 @@ Route::get('/addemploye',function (){
 Route::get('/register',function (){
    return view('register');
 });
+Route::get('view_employee', function (){
+    return view('view_employee');
+});
+Route::get('attendance', function (){
+    return view('attendance');
+});
+/*  Admin Profile   */
 Route::get('register', [system_project::class,'index']);
-Route::post('add', [system_project::class, 'add']);
+Route::post('added', [system_project::class, 'add']);
 Route::get('/profile', [ProfileController::class, 'fetchAll'])->name('profile');
-Route::get('/profile/delete/{id}', [ProfileController::class, 'destroy']);
+Route::get('deleted/{id}', [ProfileController::class, 'destroy']);
 Route::get('edit/{id}',[ProfileController::class, 'edit']);
 Route::put('update-data/{id}',[ProfileController::class, 'update']);
+Route::get('/admin', function (){
+   return view('admin');
+});
 
 
+
+/* Employee */
+Route::get('/employee', function (){
+   return view('employee');
+});
+Route::post('insert', [EmployeeController::class, 'add']);
+Route::get('employee',[EmployeeController::class, 'fetchAll'])->name('employee');
+Route::get('delete/{id}', [EmployeeController::class, 'destroy']);
+
+
+/* Leave */
+Route::post('add', [LeaveController::class, 'add']);
+Route::get('leave',[LeaveController::class, 'fetchAll'])->name('leave');
+
+Route::get('leave', function (){
+    return view('leave');
+});
 

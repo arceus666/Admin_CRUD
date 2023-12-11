@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Crud;
+use App\Models\Employee;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\system_project;
+use function PHPUnit\Framework\returnSelf;
 
 class ProfileController extends Controller
 {
@@ -42,12 +44,12 @@ public function update(Request $request, $id){
 
 
         $prof->update();
-        return to_route('profile');
+        return redirect('view_employee');
 }
     public function destroy(string|int $id): RedirectResponse
     {
         Crud::destroy($id);
-        return to_route('profile', ['data' => Crud::all()]);
+        return to_route('dashboard', ['data' => Crud::all()]);
     }
 }
 
