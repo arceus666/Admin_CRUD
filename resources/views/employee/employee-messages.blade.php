@@ -1,3 +1,11 @@
+<?php
+
+    use App\Models\Employee;
+    use App\Models\Leave;
+
+    ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +14,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <title>Employee Attendance</title>
+    <title>Employee Messages</title>
 </head>
 <body>
 <div class="container">
@@ -87,29 +95,37 @@
                 }
             </style>
             <table class="table">
-                <h1><center>Messages</center></h1>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Empployee Name</th>
-                    <th scope="col">Leave Subject</th>
-                    <th scope="col">Leave Data</th>
-                    <th scope="col">Leave Status</th>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Leave Subject</th>
+                    <th>Leave Date</th>
+                    <th>Leave Status</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Models\Employee::all() as $employee)
-                    @foreach(\App\Models\Leave::all() as $leave)
+                @foreach($data as $element)
                     <tr>
-                        <td>{{$employee->employee_id}}</td>
-                        <td>{{$employee->emp_full_name}}</td>
-                        <td>{{$leave->leave_subject}}</td>
-                        <td>{{$leave->leave_date}}</td>
-                        <td>{{$leave->leave_status}}</td>
+                        <td>{{ $element->leave_id }}</td>
+
+                        @php
+                            $employees = Employee::where('employee_id', $element->leave_id)->pluck('emp_full_name');
+                        @endphp
+
+                        @if($employees->count() >= 2)
+                            <td>{{ $employees[0] }}</td>
+                            <td>{{ $employees[1] }}</td>
+                        @elseif($employees->count() == 1)
+                            <td>{{ $employees[0] }}</td>
+                        @endif
+                        <td>{{ $element->leave_subject }}</td>
+                        <td>{{ $element->leave_date }}</td>
+                        <td>{{ $element->leave_status }}</td>
                     </tr>
                 @endforeach
-                @endforeach
                 </tbody>
+
             </table>
         </div>
     </div>

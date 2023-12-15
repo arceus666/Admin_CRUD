@@ -98,13 +98,15 @@
                 </thead>
                 <tbody>
                 @foreach(\App\Models\Employee::all() as $prof)
+                    @foreach(\App\Models\Attendance::all() as $attendance)
                     <tr>
                         <td>{{$prof->employee_id}}</td>
-                        <td>{{$prof->employee_emp_full_name}}</td>
-                        <td>{{$prof->employee_emp_time_in}}</td>
-                        <td>{{$prof->employee_emp_time_out}}</td>
+                        <td>{{$prof->emp_full_name}}</td>
+                        <td>{{$attendance->attendance_time_in}}</td>
+                        <td>{{$attendance->attendance_time_out}}</td>
 
                     </tr>
+                    @endforeach
                 @endforeach
                 </tbody>
             </table>

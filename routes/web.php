@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddEmployee;
 use App\Http\Controllers\EmployeeLeave;
+use App\Http\Controllers\Leave;
+use App\Http\Controllers\FetchAll;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +57,6 @@ Route::get('admin/admin-leavestatus', function (){
     return view('admin/admin-leavestatus');
 });
 Route::match(['get', 'post'], 'added', [AddEmployee::class,'added']);
-Route::get('/admin/admin-viewemployee', [AddEmployee::class, 'fetchAll'])->name('/admin/admin-viewemployee');
-Route::get('admin/admin-leaveapproval', [EmployeeLeave::class, 'fetchLeave']);
 Route::get('delete/{id}', [AddEmployee::class,'remove']);
 Route::get('edit/{id}', [AddEmployee::class,'edit']);
 Route::put('update-data/{id}', [AddEmployee::class, 'update']);
@@ -82,7 +82,28 @@ Route::get('/employee/employee-messages', function (){
 Route::get('/employee/employee_addleave', function (){
    return view('employee/employee_addleave');
 });
-
+Route::get('/employee/employee-addattendance', function () {
+    return view('employee/employee-addattendance');
+});
+Route::get('/employee/employee-timeout', function (){
+    return view('employee/employee-timeout');
+});
+Route::get('/employee/employee-editleave', function (){
+    return view('employee/employee-editleave');
+});
+Route::match(['get', 'post'], 'addTimein', [EmployeeLeave::class,'timein']);
 Route::match(['get','post'],'addleave',[EmployeeLeave::class, 'addleave']);
+Route::get('editOut/{id}', [EmployeeLeave::class, 'editOut']);
+Route::put('update-out/{id}', [EmployeeLeave::class, 'updateOut']);
+Route::get('editLeave/{id}', [EmployeeLeave::class, 'editLeave']);
+Route::put('editLeaveLetter/{id}', [EmployeeLeave::class, 'editletter']);
+
+/*  Fetch Data    */
+Route::get('/employee/employee-messages', [FetchAll::class, 'fetchAll'])->name('/employee/employee-messages');
+Route::get('/employee/employee-attendance', [FetchAll::class, 'fetchAttendance'])->name('/employee/employee-attendance');
+
+
+
+
 
 

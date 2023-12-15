@@ -110,7 +110,6 @@
                         <td>{{$leave->leave_status}}</td>
                         <td>
                             <a href="{{url('editleave/'.$leave->leave_id)}}" class="btn btn-primary">Edit</a>
-
                         </td>
                     </tr>
                     @endforeach

@@ -87,26 +87,30 @@
                 }
             </style>
             <table class="table">
-                <h1><center>Leave</center></h1>
+                <h1><center>Leave Management and History</center></h1>
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Empployee Name</th>
                     <th scope="col">Leave Subject</th>
                     <th scope="col">Leave Data</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach(\App\Models\Employee::all() as $employee)
+                    @foreach(\App\Models\Leave::all() as $leave)
                     <tr>
                         <td>{{$employee->employee_id}}</td>
                         <td>{{$employee->emp_full_name}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$leave->leave_subject}}</td>
+                        <td>{{$leave->leave_date}}</td>
                         <td>
-
+                            <a href="{{url('editLeave/'.$leave->leave_id)}}">Edit</a>
+                            <a href="">Delete</a>
                         </td>
                     </tr>
+                    @endforeach
                 @endforeach
                 </tbody>
             </table>

@@ -94,20 +94,38 @@
                     <th scope="col">Empployee Name</th>
                     <th scope="col">Employee Time In</th>
                     <th scope="col">Employee Time Out</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Models\Employee::all() as $employee)
+                @foreach($data as $element)
                     <tr>
-                        <td>{{$employee->employee_id}}</td>
-                        <td>{{$employee->emp_full_name}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $element->attendance_id }}</td>
 
+                        @php
+                            $employees = \App\Models\Employee::where('employee_id', $element->attendance_id)->limit(2)->pluck('emp_full_name');
+                        @endphp
+
+                        @if($employees->count() >= 2)
+                            <td>{{ $employees[0] }}</td>
+                            <td>{{ $employees[1] }}</td>
+                        @elseif($employees->count() == 1)
+                            <td>{{ $employees[0] }}</td>
+                        @else
+                            <td></td>
+                        @endif
+                        <td>{{ $element->attendance_time_in }}</td>
+                        <td>{{ $element->attendance_time_out }}</td>
+                        <td>
+                            <a href="{{url('editOut/'.$element->attendance_id)}}">Time Out</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
+
+
             </table>
+            <a href="/employee/employee-addattendance">Attendance</a>
         </div>
     </div>
 </div>
