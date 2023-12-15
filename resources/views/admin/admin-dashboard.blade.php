@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
-    <title>Dashboard</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
 <div class="container">
@@ -20,29 +20,29 @@
                 </a>
             </li>
             <li>
-                <a href="/profile">
+                <a href="/admin/admin-profile">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Admin</span>
 
                 </a>
             </li>
             <li>
-                <a href="/view_employee">
+                <a href="/admin/admin-viewemployee">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
                     <span class="title">Employees</span>
 
                 </a>
             </li>
             <li>
-                <a href="/attendance">
+                <a href="/admin/admin-attendance">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
                     <span class="title">Attendance</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/admin/admin-leaveapproval">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Settings</span>
+                    <span class="title">Leave Management</span>
                 </a>
             </li>
             <li>

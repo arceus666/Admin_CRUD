@@ -5,8 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
+    <title>Employee Attendance</title>
 </head>
 <body>
 <div class="container">
@@ -20,29 +20,29 @@
                 </a>
             </li>
             <li>
-                <a href="/profile">
+                <a href="/employee/employee-profile">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Admin</span>
+                    <span class="title">Employee Profile</span>
 
                 </a>
             </li>
             <li>
-                <a href="/view_employee">
+                <a href="/employee/employee-attendance">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Employees</span>
+                    <span class="title">Attendance</span>
 
                 </a>
             </li>
             <li>
-                <a href="/attendance">
+                <a href="/employee/employee-leave">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
-                    <span class="title">Attendance</span>
+                    <span class="title">Leave</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/employee/employee-messages">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Settings</span>
+                    <span class="title">Messages</span>
                 </a>
             </li>
             <li>
@@ -67,13 +67,13 @@
                     width: 100%;
                 }
 
-               .table td, #customers th {
+                .table td, #customers th {
                     border: 1px solid #ddd;
                     padding: 8px;
-                   text-align: center;
+                    text-align: center;
                 }
 
-               .table tr:nth-child(even){background-color: #f2f2f2;}
+                .table tr:nth-child(even){background-color: #f2f2f2;}
 
                 .table tr:hover {background-color: #ddd;}
 
@@ -81,34 +81,36 @@
                     padding-top: 12px;
                     padding-bottom: 12px;
                     text-align: left;
-                    background-color: navy;
+                    background-color: dodgerblue;
                     color: white;
                     text-align: center;
                 }
             </style>
-        <table class="table">
-            <h1><center>Attendance</center></h1>
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Empployee Firstname</th>
-                <th scope="col">Employee Lastname</th>
-                <th scope="col">Employee Time in</th>
-                <th scope="col">Employee Date in</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach(\App\Models\Employee::all() as $prof)
+            <table class="table">
+                <h1><center>Messages</center></h1>
+                <thead>
                 <tr>
-                    <td>{{$prof->employee_id}}</td>
-                    <td>{{$prof->employee_fname}}</td>
-                    <td>{{$prof->employee_lname}}</td>
-                    <td>{{$prof->employee_timein}}</td>
-                    <td>{{$prof->employee_datein}}</td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Empployee Name</th>
+                    <th scope="col">Leave Subject</th>
+                    <th scope="col">Leave Data</th>
+                    <th scope="col">Leave Status</th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                @foreach(\App\Models\Employee::all() as $employee)
+                    @foreach(\App\Models\Leave::all() as $leave)
+                    <tr>
+                        <td>{{$employee->employee_id}}</td>
+                        <td>{{$employee->emp_full_name}}</td>
+                        <td>{{$leave->leave_subject}}</td>
+                        <td>{{$leave->leave_date}}</td>
+                        <td>{{$leave->leave_status}}</td>
+                    </tr>
+                @endforeach
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

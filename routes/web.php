@@ -1,10 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\system_project;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\AddEmployee;
+use App\Http\Controllers\EmployeeLeave;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,54 +21,68 @@ Route::get('/', function () {
 Route::get('/dbconn', function (){
    return view('dbconn');
 });
-Route::get('/dashboard ', function (){
-   return view('dashboard');
+
+
+/*  Admin Profile   */
+Route::get('admin/admin-dashboard', function (){
+    return view('admin/admin-dashboard');
 });
 Route::get('/login', function (){
     return view('login');
 });
-Route::get('/update', function (){
-   return view('update');
+Route::get('/admin', function (){
+   return view('admin');
 });
-Route::get('/addemploye',function (){
-   return view('addemploye');
+Route::get('/admin/admin_addemployee',function (){
+   return view('admin/admin_addemployee');
 });
 Route::get('/register',function (){
    return view('register');
 });
-Route::get('view_employee', function (){
-    return view('view_employee');
+Route::get('admin/admin-viewemployee', function (){
+    return view('admin/admin-viewemployee');
 });
-Route::get('attendance', function (){
-    return view('attendance');
+Route::get('admin/admin-attendance', function (){
+    return view('admin/admin-attendance');
 });
-/*  Admin Profile   */
-Route::get('register', [system_project::class,'index']);
-Route::post('added', [system_project::class, 'add']);
-Route::get('/profile', [ProfileController::class, 'fetchAll'])->name('profile');
-Route::get('deleted/{id}', [ProfileController::class, 'destroy']);
-Route::get('edit/{id}',[ProfileController::class, 'edit']);
-Route::put('update-data/{id}',[ProfileController::class, 'update']);
-Route::get('/admin', function (){
-   return view('admin');
+Route::get('admin/admin-profile', function (){
+   return view('admin/admin-profile');
 });
-
-
+Route::get('admin/admin-leaveapproval', function (){
+    return view('admin/admin-leaveapproval');
+});
+Route::get('admin/admin-leavestatus', function (){
+    return view('admin/admin-leavestatus');
+});
+Route::match(['get', 'post'], 'added', [AddEmployee::class,'added']);
+Route::get('/admin/admin-viewemployee', [AddEmployee::class, 'fetchAll'])->name('/admin/admin-viewemployee');
+Route::get('admin/admin-leaveapproval', [EmployeeLeave::class, 'fetchLeave']);
+Route::get('delete/{id}', [AddEmployee::class,'remove']);
+Route::get('edit/{id}', [AddEmployee::class,'edit']);
+Route::put('update-data/{id}', [AddEmployee::class, 'update']);
+Route::get('editleave/{id}', [AddEmployee::class, 'editleave']);
+Route::put('update-status/{id}', [AddEmployee::class, 'edited']);
 
 /* Employee */
-Route::get('/employee', function (){
-   return view('employee');
+Route::get('/employee/employee-dashboard', function (){
+   return view('employee/employee-dashboard');
 });
-Route::post('insert', [EmployeeController::class, 'add']);
-Route::get('employee',[EmployeeController::class, 'fetchAll'])->name('employee');
-Route::get('delete/{id}', [EmployeeController::class, 'destroy']);
-
-
-/* Leave */
-Route::post('add', [LeaveController::class, 'add']);
-Route::get('leave',[LeaveController::class, 'fetchAll'])->name('leave');
-
-Route::get('leave', function (){
-    return view('leave');
+Route::get('/employee/employee-profile', function (){
+   return view('employee/employee-profile');
 });
+Route::get('/employee/employee-attendance', function (){
+    return view('employee/employee-attendance');
+});
+Route::get('/employee/employee-leave', function (){
+    return view('employee/employee-leave');
+});
+Route::get('/employee/employee-messages', function (){
+    return view('employee/employee-messages');
+});
+Route::get('/employee/employee_addleave', function (){
+   return view('employee/employee_addleave');
+});
+
+Route::match(['get','post'],'addleave',[EmployeeLeave::class, 'addleave']);
+
 

@@ -14,7 +14,7 @@
 <label for="admin-password">Password</label>
 <input type="password" name="-admin-password">
 <button>
-    <a href="/dashboard">Login</a>
+    <a href="/admin/admin-dashboard">Login</a>
 </button>
 </form>
 </body>

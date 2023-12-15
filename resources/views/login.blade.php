@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,25 +22,28 @@
             <div class="col-md-6 right">
                 <div class="input-box">
                     <header>Login Account</header>
-                    <div class="input-field">
-                        <input type="email" name="email" id="email" class="input" required>
-                        <label for="email"><i class="fa-solid fa-user"></i>Username</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" name="password" id="password" class="input" required>
-                        <label for="password"><i class="fa-solid fa-lock"></i>Password</label>
-                    </div>
-                    <div class="input-field">
-                        <a href="/employee" class="btn btn-primary" id="signin" name="signin">Sign in</a>
-                    </div>
-                    <div class="signin">
-                        <span>Don't have an account?<a href="/register">Click here!</a></span>
-                    </div>
-                    <div>
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                        <div class="input-field">
+                            <input type="email" name="username" id="email" class="input" required>
+                            <label for="email"><i class="fa-solid fa-user"></i>Username</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="password" id="password" class="input" required>
+                            <label for="password"><i class="fa-solid fa-lock"></i>Password</label>
+                        </div>
+                        <div class="input-field">
+                            <a href="/employee/employee-dashboard" class="btn btn-primary" id="signin" name="signin">Sign in</a>
+                        </div>
+                        <div class="signin">
+                            <span>Don't have an account?<a href="/register">Click here!</a></span>
+                        </div>
+                        <div>
+
                         <button>
                             <a href="/admin">Login Admin</a>
                         </button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -47,3 +51,4 @@
 </div>
 </body>
 </html>
+
