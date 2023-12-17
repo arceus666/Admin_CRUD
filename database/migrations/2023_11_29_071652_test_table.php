@@ -62,19 +62,24 @@ return new class extends Migration
             $table->string('emp_email');
             $table->foreign('shift_name')
                 ->references('shift_name')
-                ->on('shift');
+                ->on('shift')
+            ->onDelete('cascade');
             $table->foreign('dep_name')
             ->references('dep_name')
-            ->on('department');
+            ->on('department')
+                ->onDelete('cascade');
             $table->foreign('emp_type_id')
             ->references('emp_type_id')
-            ->on('employee_type');
+            ->on('employee_type')
+                ->onDelete('cascade');
             $table->foreign('location_name')
             ->references('location_name')
-            ->on('location');
+            ->on('location')
+                ->onDelete('cascade');
             $table->foreign('emp_gender')
                 ->references('emp_gender')
-                ->on('gender');
+                ->on('gender')
+                ->onDelete('cascade');
 
         });
     }

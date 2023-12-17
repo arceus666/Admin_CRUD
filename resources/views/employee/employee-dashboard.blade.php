@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a href="/employee/employee-profile">
+                <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Employee Profile</span>
 
@@ -46,6 +47,12 @@
                 </a>
             </li>
             <li>
+                <a href="/employee/employee-department">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Employee Department</span>
+                </a>
+            </li>
+            <li>
                 <a href="/login">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
@@ -58,6 +65,51 @@
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
+        </div>
+        <div>
+            <style>
+                .table {
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                .table td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: center;
+                }
+
+                .table tr:nth-child(even){background-color: #f2f2f2;}
+
+                .table tr:hover {background-color: #ddd;}
+
+                .table th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: dodgerblue;
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+            <table class="table">
+                <caption><h1><center>Total of Attendance and Employees</center></h1></caption>
+                <thead>
+                <tr>
+                    <th scope="col">Total of Attendance</th>
+                    <th scope="col">Total of Employees</th>
+                    <th scope="col">Total of Departments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{$data}}</td>
+                    <td>{{$totalEmployees}}
+                    <td>{{$totalDepartments}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

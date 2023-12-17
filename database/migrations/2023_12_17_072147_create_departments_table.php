@@ -21,13 +21,16 @@ return new class extends Migration
             $table->string('dep_name');
             $table->foreign('emp_full_name')
                 ->references('emp_full_name')
-                ->on('employee');
+                ->on('employee')
+                ->onDelete('cascade');
             $table->foreign('emp_type_id')
                 ->references('emp_type_id')
-                ->on('employee_type');
+                ->on('employee_type')
+                ->onDelete('cascade');
             $table->foreign('dep_name')
                 ->references('dep_name')
-                ->on('department');
+                ->on('department')
+                ->onDelete('cascade');
         });
     }
 

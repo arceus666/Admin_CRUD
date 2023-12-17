@@ -41,7 +41,7 @@
             </li>
             <li>
                 <a href="/admin/admin-leaveapproval">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="send-outline"></ion-icon></span>
                     <span class="title">Leave Management</span>
                 </a>
             </li>
@@ -52,8 +52,26 @@
                 </a>
             </li>
             <li>
+                <a href="/admin/admin-holiday">
+                    <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+                    <span class="title">Holiday Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/admin-location">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <span class="title">Location Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/admin-shift">
+                    <span class="icon"><ion-icon name="time-outline"></ion-icon></span>
+                    <span class="title">Shift Management</span>
+                </a>
+            </li>
+            <li>
                 <a href="/login">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
                 </a>
             </li>
@@ -106,15 +124,25 @@
                     <th scope="col">Employee Name</th>
                     <th scope="col">Employee Type</th>
                     <th scope="col">Department</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($data as $element)
+
                     <tr>
+
                         @foreach($element->attributesToArray() as $department_employee)
                             <td>{{$department_employee}}</td>
                         @endforeach
+                        <td>
+                            <a href="{{url('editDepartment/'.$element->dep_emp_id)}}">Edit</a>
+                            <a href="{{url('deleteDepartment/'.$element->dep_emp_id)}}">Delete</a>
+
+                        </td>
+
                     </tr>
+
                 @endforeach
                 </tbody>
             </table>

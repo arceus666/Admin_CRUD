@@ -41,19 +41,37 @@
             </li>
             <li>
                 <a href="/admin/admin-leaveapproval">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="send-outline"></ion-icon></span>
                     <span class="title">Leave Management</span>
                 </a>
             </li>
             <li><li>
                 <a href="/admin/admin-department">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
                     <span class="title">Department Management</span>
                 </a>
             </li>
             <li>
+                <a href="/admin/admin-holiday">
+                    <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+                    <span class="title">Holiday Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/admin-location">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <span class="title">Location Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/admin-shift">
+                    <span class="icon"><ion-icon name="time-outline"></ion-icon></span>
+                    <span class="title">Shift Management</span>
+                </a>
+            </li>
+            <li>
                 <a href="/login">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
                 </a>
             </li>
