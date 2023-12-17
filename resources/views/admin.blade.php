@@ -89,7 +89,7 @@
     <div class="input-box">
         <header>Login Account</header>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <div>class="input-field">
+            <div class="input-field">
                 <input type="text" name="admin-username" id="admin-username"  class="input" required>
                 <label for="admin-username"><i class="fa-solid fa-user"></i>Admin Username:</label>
             </div>
