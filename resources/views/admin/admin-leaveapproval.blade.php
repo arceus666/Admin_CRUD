@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -95,6 +99,10 @@
                     color: white;
                     text-align: center;
                 }
+                @media (max-width: 768px) {
+                    .table th, .table td {
+                        font-size: 14px;
+                    }}
             </style>
             <table class="table">
                 <h1>
@@ -102,11 +110,11 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Employee Name</th>
-                    <th scope="col">Leave Subject</th>
-                    <th scope="col">Leave Date</th>
-                    <th scope="col">Leave Status</th>
+                    <th scope="col"><i class="fas fa-id-card"></i> ID</th>
+                    <th scope="col"><i class="fas fa-user"></i> Employee Name</th>
+                    <th scope="col"><i class="fa-solid fa-info"></i> Leave Subject</th>
+                    <th scope="col"><i class="fa-regular fa-calendar"></i>></i> Leave Date</th>
+                    <th scope="col"> Leave Status</th>
                     <th scope="col">Action</th>
 
                 </tr>

@@ -8,7 +8,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('cssfile/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
 
     <title>Employee</title>
 </head>
@@ -78,43 +81,19 @@
         <div>
             <h1>Employees Profile</h1>
             <div>
-                <style>
-                    .table {
-                        font-family: Arial, Helvetica, sans-serif;
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
 
-                    .table td, #customers th {
-                        border: 1px solid #ddd;
-                        padding: 8px;
-                        text-align: center;
-                    }
 
-                    .table tr:nth-child(even){background-color: #f2f2f2;}
-
-                    .table tr:hover {background-color: #ddd;}
-
-                    .table th {
-                        padding-top: 12px;
-                        padding-bottom: 12px;
-                        text-align: left;
-                        background-color: navy;
-                        color: white;
-                        text-align: center;
-                    }
-                </style>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Employee Username</th>
-                        <th scope="col">Employee Password</th>
-                        <th scope="col">Employee Name</th>
-                        <th scope="col">Employee Birth</th>
-                        <th scope="col">Employee Contact</th>
-                        <th scope="col">Employee Email</th>
-                        <th scope="col">Action</th>
+                        <th scope="col"><i class="fas fa-id-card"></i>  ID </th>
+                        <th scope="col"><i class="fas fa-user"></i>  Employee Username </th>
+                        <th scope="col"><i class="fas fa-key"></i>  Employee Password </th>
+                        <th scope="col"><i class="fas fa-user"></i>  Employee Name </th>
+                        <th scope="col"><i class="fas fa-birthday-cake"></i>  Employee Birth </th>
+                        <th scope="col"><i class="fas fa-phone"></i>  Employee Contact </th>
+                        <th scope="col"><i class="fas fa-envelope"></i>  Employee Email </th>
+                        <th scope="col"><i class="fas fa-cogs"></i>  Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -129,15 +108,15 @@
                             <td>{{$employee->emp_email}}</td>
 
                             <td>
-                                <a href="{{url('edit/'.$employee->employee_id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{url('delete/'.$employee->employee_id)}}" class="btn btn-primary">Delete</a>
+                                <a href="{{url('edit/'.$employee->employee_id)}}" class="btn btn-primary "><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                                <a href="{{url('delete/'.$employee->employee_id)}}" class="btn btn-primary" > <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
-            <a href="/admin/admin_addemployee" class="btn">Add Employee</a>
+            <a href="/admin/admin_addemployee" class="btn " style="color:#314f81" ><ion-icon name="person-add-outline"></ion-icon><span class="title">Add Employee</span></a>
         </div>
     </div>
 </div>

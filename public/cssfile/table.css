@@ -1,0 +1,55 @@
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto; /* Add horizontal scrollbar for smaller screens */
+}
+
+.table td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: navy;
+    color: white;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #ffffff; /* Cute pink color, you can change it */
+    color: #04175e;
+    border: 2px solid #8199ef;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #91a7ff; /* Slightly darker pink on hover, you can change it */
+    color: #04175e;
+}
+
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 14px;
+    }
+}

@@ -6,6 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
     <title>Attendance</title>
 </head>
 <body>
@@ -96,10 +101,10 @@
                 <h1><center>Attendance</center></h1>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Employee Name</th>
-                    <th scope="col">Employee Time In</th>
-                    <th scope="col">Employee Time Out</th>
+                    <th scope="col"><i class="fas fa-id-card"></i> ID</th>
+                    <th scope="col"><i class="fas fa-user"></i> Employee Name</th>
+                    <th scope="col"><i class="fa-solid fa-indent"></i> Employee Time In</th>
+                    <th scope="col"><i class="fa-solid fa-outdent"></i> Employee Time Out</th>
                 </tr>
                 </thead>
                 <tbody>
