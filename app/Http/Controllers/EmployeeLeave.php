@@ -11,24 +11,17 @@ use Illuminate\View\View;
 
 class EmployeeLeave extends Controller
 {
-public function addleave(Request $request){
-    $query = DB::table('leave')->insert([
-        'leave_subject'=>$request->input('leave_subject'),
-        'leave_date'=>$request->input('leave_date'),
-
-    ]);
-    return redirect('employee/employee-leave');
-}
     public function timein(Request $request){
         $query = DB::table('attendance')->insert([
-            'attendance_time_in'=>$request->input('attendance_time_in')
+            'attendance_time_in'=>$request->input('attendance_time_in'),
+            'emp_full_name'=>$request->input('emp_full_name')
         ]);
         return redirect('/employee/employee-attendance');
     }
     public function editOut($id){
     $attendance = Attendance::find($id);
     $employee = Employee::find($id);
-    return view('employee/employee-timeout',compact('attendance'));
+    return view('employee/employee-timeout',compact('attendance', 'employee'));
     }
     public function updateOut(Request $request, $id){
         $attendance = Attendance::find($id);
@@ -47,5 +40,4 @@ public function addleave(Request $request){
         $leave->update();
         return redirect('employee/employee-leave');
     }
-
 }

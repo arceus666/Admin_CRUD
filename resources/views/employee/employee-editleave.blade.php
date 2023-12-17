@@ -12,21 +12,21 @@
 <body>
 <div class="container">
     <h1>Edit Leave Letter</h1>
-    <form action="{{url('editLeaveLetter/'.$leave->leave_id)}}" method="post">
+    @foreach(\App\Models\Leave::all() as $leave)
         @foreach(\App\Models\Employee::all() as $employee)
-            @foreach(\App\Models\Leave::all() as $leave)
+    <form action="{{url('editLeaveLetter/'.$leave->leave_id)}}" method="post">
                 {{csrf_field()}}
                 @method('PUT')
                 <label for="emp_full_name">Employee Name</label>
                 <input type="text" name="emp_full_name" value="{{$employee->emp_full_name}}">
-        <label for="leave_subject">Leave Subject</label>
-        <input type="text" name="leave_subject" value="{{$leave->leave_subject}}">
-        <label for="leave_date">Leave Date</label>
-        <input type="date" name="leave_date" value="{{$leave->leave_date}}">
-        <button type="submit">Submit</button>
-        @endforeach
-            @endforeach
+                <label for="leave_subject">Leave Subject</label>
+                <input type="text" name="leave_subject" value="{{$leave->leave_subject}}">
+                <label for="leave_date">Leave Date</label>
+                <input type="date" name="leave_date" value="{{$leave->leave_date}}">
+                <button type="submit">Submit</button>
     </form>
+        @endforeach
+    @endforeach
 </div>
 
 

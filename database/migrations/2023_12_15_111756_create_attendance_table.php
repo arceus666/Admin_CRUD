@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('attendance', function (Blueprint $table) {
             $table->id('attendance_id');
+            $table->string('emp_full_name');
             $table->dateTime('attendance_time_in');
             $table->dateTime('attendance_time_out');
-           $table->string('emp_full_name');
-            $table->timestamps();
+            $table->foreign('emp_full_name')
+                ->references('emp_full_name')
+                ->on('employee');
         });
     }
 

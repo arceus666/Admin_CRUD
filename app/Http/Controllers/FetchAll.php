@@ -22,9 +22,28 @@ class FetchAll extends Controller
     public function fetchAttendance(): \Illuminate\Contracts\View\View
     {
         $data = Attendance::all();
+        $employee = Employee::all();
 
-        return view('employee.employee-attendance', ['data' => $data]);
-
+        return view('employee.employee-attendance', ['data' => $data, 'employee' => $employee]);
     }
+    public function fetchLeaved(): \Illuminate\Contracts\View\View
+    {
+        $data = Leave::all();
+        $employee = Employee::all();
+
+        return view('employee.employee-leave', ['data' => $data, 'employee' => $employee]);
+    }
+    public function fetchAdmin(): \Illuminate\Contracts\View\View
+    {
+        $data = Attendance::all();
+        $employee = Employee::all();
+        return view('admin.admin-attendance', ['data' => $data, 'employee' => $employee]);
+    } public function fetchAdminLeave(): \Illuminate\Contracts\View\View
+    {
+        $data = Leave::all();
+        $employee = Employee::all();
+        return view('admin.admin-leaveapproval', ['data' => $data, 'employee' => $employee]);
+    }
+
 
 }

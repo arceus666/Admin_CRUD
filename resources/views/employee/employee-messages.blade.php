@@ -1,12 +1,12 @@
 <?php
 
-    use App\Models\Employee;
-    use App\Models\Leave;
+use App\Models\Employee;
+use App\Models\Leave;
 
-    ?>
+?>
 
 
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,9 +81,13 @@
                     text-align: center;
                 }
 
-                .table tr:nth-child(even){background-color: #f2f2f2;}
+                .table tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
 
-                .table tr:hover {background-color: #ddd;}
+                .table tr:hover {
+                    background-color: #ddd;
+                }
 
                 .table th {
                     padding-top: 12px;
@@ -107,21 +111,9 @@
                 <tbody>
                 @foreach($data as $element)
                     <tr>
-                        <td>{{ $element->leave_id }}</td>
-
-                        @php
-                            $employees = Employee::where('employee_id', $element->leave_id)->pluck('emp_full_name');
-                        @endphp
-
-                        @if($employees->count() >= 2)
-                            <td>{{ $employees[0] }}</td>
-                            <td>{{ $employees[1] }}</td>
-                        @elseif($employees->count() == 1)
-                            <td>{{ $employees[0] }}</td>
-                        @endif
-                        <td>{{ $element->leave_subject }}</td>
-                        <td>{{ $element->leave_date }}</td>
-                        <td>{{ $element->leave_status }}</td>
+                        @foreach($element->attributesToArray() as $leave)
+                            <td>{{$leave}}</td>
+                        @endforeach
                     </tr>
                 @endforeach
                 </tbody>
@@ -138,21 +130,22 @@
     let navigation = document.querySelector('.navigation');
     let main = document.querySelector('.main');
 
-    toggle.onclick =  function (){
+    toggle.onclick = function () {
         navigation.classList.toggle('active');
         main.classList.toggle('active');
     }
 
     let list = document.querySelectorAll('.navigation li');
-    function activeLink(){
-        list.forEach((item)=>
+
+    function activeLink() {
+        list.forEach((item) =>
             item.classList.remove('hovered'));
         this.classList.add('hovered')
     }
-    list.forEach((item)=> item.addEventListener('mouseover', activeLink)
+
+    list.forEach((item) => item.addEventListener('mouseover', activeLink)
     );
 </script>
-
 
 
 </body>

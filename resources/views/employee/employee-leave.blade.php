@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <title>Employee Attendance</title>
+    <title>Employee Leave Letter</title>
+
 </head>
 <body>
 <div class="container">
@@ -16,7 +17,6 @@
                 <a href="#">
                     <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
                     <span class="title">System Title</span>
-
                 </a>
             </li>
             <li>
@@ -94,23 +94,21 @@
                     <th scope="col">Empployee Name</th>
                     <th scope="col">Leave Subject</th>
                     <th scope="col">Leave Data</th>
-                    <th scope="col">Action</th>
+                    <th></th>
+                    <th scope="col"> Actions</th>
+
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Models\Employee::all() as $employee)
-                    @foreach(\App\Models\Leave::all() as $leave)
+                @foreach($data as $element)
                     <tr>
-                        <td>{{$employee->employee_id}}</td>
-                        <td>{{$employee->emp_full_name}}</td>
-                        <td>{{$leave->leave_subject}}</td>
-                        <td>{{$leave->leave_date}}</td>
+                        @foreach($element->attributesToArray() as $leave)
+                            <td>{{$leave}}</td>
+                        @endforeach
                         <td>
-                            <a href="{{url('editLeave/'.$leave->leave_id)}}">Edit</a>
-                            <a href="">Delete</a>
+                            <a href="{{url('editLeave/'.$element)}}">Edit</a>
                         </td>
                     </tr>
-                    @endforeach
                 @endforeach
                 </tbody>
             </table>

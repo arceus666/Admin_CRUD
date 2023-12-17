@@ -15,9 +15,5 @@ class Leave extends Model
     protected $fillable = [
         'leave_subject'
     ];
-    // Leave model
-    public function employee() {
-        return $this->belongsTo(Employee::class, 'employee_id', 'employee_id');
-    }
 
 }

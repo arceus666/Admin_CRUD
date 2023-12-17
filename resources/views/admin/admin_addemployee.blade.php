@@ -25,28 +25,52 @@
         <label for="emp_email">Email</label>
         <input type="text" name="emp_email"><br>
         <label for="dep_name">Department Name</label>
-        <input type="text" name="dep_name"><br>
-        <label for="emp_type_id">ID Type</label>
-        <input type="text" name="emp_type_id"><br>
-        <label for="location_id">Location</label>
-        <input type="text" name="location_id"><br>
+        <select name="dep_name">
+            @foreach(\App\Models\Department::pluck('dep_name') as $department)
+            <option value="{{$department}}">{{$department}}</option>
+            @endforeach
+        </select>
+        <label for="emp_type_id">Employee Type</label>
+        <select name="emp_type_id">
+            @foreach(\App\Models\EmployeeType::pluck('emp_type_id') as $emptype)
+            <option value="{{$emptype}}">{{$emptype}}</option>
+            @endforeach
+        </select>
         <label for="location_name">Location Name</label>
-        <input type="text" name="location_name"><br>
-        <label for="shift_id">Shift Id</label>
-        <input type="text" name="shift_id"><br>
-        <label for="shift_name">Shift Name</label>
-        <input type="text" name="shift_name"><br>
-        <label for="shift_time_in">Shift Time In</label>
-        <input type="datetime-local" name="shift_time_in"><br>
+        <select name="location_name">
+            @foreach(\App\Models\Location::pluck('location_name') as $location)
+            <option value="{{$location}}">{{$location}}</option>
+            @endforeach
+        </select>
+            <label for="shift_name">Shift Name</label>
+        <select name="shift_name">
+            @foreach(\App\Models\Shift::pluck('shift_name') as $shift)
+            <option value="{{$shift}}">{{$shift}}</option>
+            @endforeach
+        </select>
+        <label for="shift_time_in">Shift Time in</label>
+        <select name="shift_time_in">
+            @foreach(\App\Models\Shift::pluck('shift_time_in') as $shift)
+            <option value="{{$shift}}">{{$shift}}AM</option>
+            @endforeach
+        </select>
         <label for="shift_time_out">Shift Time Out</label>
-        <input type="datetime-local" name="shift_time_out"><br>
+        <select name="shift_time_out">
+            @foreach(\App\Models\Shift::pluck('shift_time_out') as $shift)
+            <option value="{{$shift}}">{{$shift}}PM</option>
+            @endforeach
+        </select>
+
         <label for="emp_address">Employee Address</label>
         <input type="text" name="emp_address"><br>
         <label for="emp_joining_data">Joining Date</label>
         <input type="date" name="emp_joining_data">
         <label for="emp_gender">Gender</label>
-        <input type="text" name="emp_gender">
-
+        <select name="emp_gender">
+            @foreach(\App\Models\Gender::pluck('emp_gender') as $gender)
+            <option value="{{$gender}}">{{$gender}}</option>
+            @endforeach
+        </select>
         <button type="submit">Add Employee</button>
     </form>
 </div>

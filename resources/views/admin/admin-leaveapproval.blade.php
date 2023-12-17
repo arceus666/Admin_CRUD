@@ -73,9 +73,13 @@
                     text-align: center;
                 }
 
-                .table tr:nth-child(even){background-color: #f2f2f2;}
+                .table tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
 
-                .table tr:hover {background-color: #ddd;}
+                .table tr:hover {
+                    background-color: #ddd;
+                }
 
                 .table th {
                     padding-top: 12px;
@@ -87,7 +91,9 @@
                 }
             </style>
             <table class="table">
-                <h1><center>Leave Management</center></h1>
+                <h1>
+                    <center>Leave Management</center>
+                </h1>
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -100,20 +106,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach(\App\Models\Employee::all() as $prof)
-                    @foreach(\App\Models\Leave::all() as $leave)
+                @foreach($data as $element)
                     <tr>
-                        <td>{{$prof->employee_id}}</td>
-                        <td>{{$prof->emp_full_name}}</td>
-                        <td>{{$leave->leave_subject}}</td>
-                        <td>{{$leave->leave_date}}</td>
-                        <td>{{$leave->leave_status}}</td>
-                        <td>
-                            <a href="{{url('editleave/'.$leave->leave_id)}}" class="btn btn-primary">Edit</a>
-                        </td>
-                    </tr>
+                        @foreach($element->attributesToArray() as $leave)
+                            <td>{{$leave}}</td>
+                        @endforeach
+                            <td>
+                                <a href="{{url('editleave/'.$element->leave_id)}}" class="btn btn-primary">Edit</a>
+                            </td>
+                        </tr>
                     @endforeach
-                @endforeach
                 </tbody>
             </table>
         </div>
@@ -127,21 +129,22 @@
     let navigation = document.querySelector('.navigation');
     let main = document.querySelector('.main');
 
-    toggle.onclick =  function (){
+    toggle.onclick = function () {
         navigation.classList.toggle('active');
         main.classList.toggle('active');
     }
 
     let list = document.querySelectorAll('.navigation li');
-    function activeLink(){
-        list.forEach((item)=>
+
+    function activeLink() {
+        list.forEach((item) =>
             item.classList.remove('hovered'));
         this.classList.add('hovered')
     }
-    list.forEach((item)=> item.addEventListener('mouseover', activeLink)
+
+    list.forEach((item) => item.addEventListener('mouseover', activeLink)
     );
 </script>
-
 
 
 </body>

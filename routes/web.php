@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddEmployee;
 use App\Http\Controllers\EmployeeLeave;
-use App\Http\Controllers\Leave;
+use App\Http\Controllers\Leaved;
 use App\Http\Controllers\FetchAll;
 
 /*
@@ -92,7 +92,7 @@ Route::get('/employee/employee-editleave', function (){
     return view('employee/employee-editleave');
 });
 Route::match(['get', 'post'], 'addTimein', [EmployeeLeave::class,'timein']);
-Route::match(['get','post'],'addleave',[EmployeeLeave::class, 'addleave']);
+Route::match(['get','post'],'addLeave',[Leaved::class,'addLeave']);
 Route::get('editOut/{id}', [EmployeeLeave::class, 'editOut']);
 Route::put('update-out/{id}', [EmployeeLeave::class, 'updateOut']);
 Route::get('editLeave/{id}', [EmployeeLeave::class, 'editLeave']);
@@ -101,6 +101,10 @@ Route::put('editLeaveLetter/{id}', [EmployeeLeave::class, 'editletter']);
 /*  Fetch Data    */
 Route::get('/employee/employee-messages', [FetchAll::class, 'fetchAll'])->name('/employee/employee-messages');
 Route::get('/employee/employee-attendance', [FetchAll::class, 'fetchAttendance'])->name('/employee/employee-attendance');
+Route::get('/employee/employee-leave', [FetchAll::class, 'fetchLeaved'])->name('/employee/employee-leave');
+Route::get('/admin/admin-attendance', [FetchAll::class, 'fetchAdmin'])->name('admin/admin-attendance');
+Route::get('/admin/admin-leaveapproval', [FetchAll::class, 'fetchAdminLeave'])->name('admin/admin-leaveapproval');
+
 
 
 

@@ -19,9 +19,7 @@ class AddEmployee extends Controller
        'emp_password'=>$request->input('emp_password'),
         'dep_name'=>$request->input('dep_name'),
         'emp_type_id'=>$request->input('emp_type_id'),
-        'location_id'=>$request->input('location_id'),
         'location_name'=>$request->input('location_name'),
-        'shift_id'=>$request->input('shift_id'),
         'shift_name'=>$request->input('shift_name'),
         'shift_time_in'=>$request->input('shift_time_in'),
         'shift_time_out'=>$request->input('shift_time_out'),
@@ -54,9 +52,7 @@ class AddEmployee extends Controller
         $employee->emp_password = $request->input('emp_password');
         $employee->dep_name = $request->input('dep_name');
         $employee->emp_type_id = $request->input('emp_type_id');
-        $employee->location_id = $request->input('location_id');
         $employee->location_name = $request->input('location_name');
-        $employee->shift_id = $request->input('shift_id');
         $employee->shift_name = $request->input('shift_name');
         $employee->shift_time_in = $request->input('shift_time_out');
         $employee->emp_gender = $request->input('emp_gender');

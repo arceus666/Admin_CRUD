@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('leave', function (Blueprint $table) {
            $table->id('leave_id');
+            $table->string('emp_full_name')->index();
            $table->string('leave_subject');
            $table->date('leave_date');
            $table->string('leave_status');
+            $table->foreign('emp_full_name')
+                ->references('emp_full_name')
+                ->on('employee');
         });
     }
 

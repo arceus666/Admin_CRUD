@@ -99,28 +99,15 @@
                 </thead>
                 <tbody>
                 @foreach($data as $element)
-                    <tr>
-                        <td>{{ $element->attendance_id }}</td>
-
-                        @php
-                            $employees = \App\Models\Employee::where('employee_id', $element->attendance_id)->limit(2)->pluck('emp_full_name');
-                        @endphp
-
-                        @if($employees->count() >= 2)
-                            <td>{{ $employees[0] }}</td>
-                            <td>{{ $employees[1] }}</td>
-                        @elseif($employees->count() == 1)
-                            <td>{{ $employees[0] }}</td>
-                        @else
-                            <td></td>
-                        @endif
-                        <td>{{ $element->attendance_time_in }}</td>
-                        <td>{{ $element->attendance_time_out }}</td>
-                        <td>
+                        <tr>
+                            @foreach($element->attributesToArray() as $attendance)
+                                <td>{{$attendance}}</td>
+                            @endforeach
+                            <td>
                             <a href="{{url('editOut/'.$element->attendance_id)}}">Time Out</a>
                         </td>
                     </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
 
 
@@ -151,8 +138,6 @@
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
 </script>
-
-
 
 </body>
 </html>
