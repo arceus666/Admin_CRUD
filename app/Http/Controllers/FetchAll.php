@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\Attendance;
+use App\Models\Department;
+use App\Models\Departments;
 use App\Models\Employee;
+use App\Models\EmployeeType;
 use App\Models\Leave;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -38,11 +41,17 @@ class FetchAll extends Controller
         $data = Attendance::all();
         $employee = Employee::all();
         return view('admin.admin-attendance', ['data' => $data, 'employee' => $employee]);
-    } public function fetchAdminLeave(): \Illuminate\Contracts\View\View
+    }
+    public function fetchAdminLeave(): \Illuminate\Contracts\View\View
     {
         $data = Leave::all();
         $employee = Employee::all();
         return view('admin.admin-leaveapproval', ['data' => $data, 'employee' => $employee]);
+    }
+    public function fetchDepartments(): \Illuminate\Contracts\View\View
+    {
+        $data = Departments::all();
+        return view('admin.admin-department', ['data' => $data]);
     }
 
 

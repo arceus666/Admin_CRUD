@@ -76,4 +76,13 @@ class AddEmployee extends Controller
         $leave->update();
         return redirect('/admin/admin-leaveapproval');
     }
+    public function addDep(Request $request){
+        $query = DB::table('department-employee')->insert([
+            'emp_full_name'=>$request->input('emp_full_name'),
+            'emp_type_id'=>$request->input('emp_type_id'),
+            'dep_name'=>$request->input('dep_name'),
+
+        ]);
+        return redirect('/admin/admin-department');
+    }
 }

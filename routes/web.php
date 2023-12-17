@@ -56,12 +56,20 @@ Route::get('admin/admin-leaveapproval', function (){
 Route::get('admin/admin-leavestatus', function (){
     return view('admin/admin-leavestatus');
 });
+Route::get('admin/admin-department', function (){
+    return view('admin/admin-department');
+});
+Route::get('admin/admin_add_department', function (){
+    return view('admin/admin_add_department');
+});
 Route::match(['get', 'post'], 'added', [AddEmployee::class,'added']);
 Route::get('delete/{id}', [AddEmployee::class,'remove']);
 Route::get('edit/{id}', [AddEmployee::class,'edit']);
 Route::put('update-data/{id}', [AddEmployee::class, 'update']);
 Route::get('editleave/{id}', [AddEmployee::class, 'editleave']);
 Route::put('update-status/{id}', [AddEmployee::class, 'edited']);
+Route::match(['get','post'], 'add',[AddEmployee::class,'addDep']);
+///END OF ADMIN
 
 /* Employee */
 Route::get('/employee/employee-dashboard', function (){
@@ -104,6 +112,7 @@ Route::get('/employee/employee-attendance', [FetchAll::class, 'fetchAttendance']
 Route::get('/employee/employee-leave', [FetchAll::class, 'fetchLeaved'])->name('/employee/employee-leave');
 Route::get('/admin/admin-attendance', [FetchAll::class, 'fetchAdmin'])->name('admin/admin-attendance');
 Route::get('/admin/admin-leaveapproval', [FetchAll::class, 'fetchAdminLeave'])->name('admin/admin-leaveapproval');
+Route::get('/admin/admin-department', [FetchAll::class, 'fetchDepartments'])->name('admin/admin-department');
 
 
 

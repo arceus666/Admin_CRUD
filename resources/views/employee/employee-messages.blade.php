@@ -117,7 +117,6 @@ use App\Models\Leave;
                     </tr>
                 @endforeach
                 </tbody>
-
             </table>
         </div>
     </div>

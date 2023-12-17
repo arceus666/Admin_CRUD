@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,17 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('cssfile/style.css') }}" rel="stylesheet">
-
-
-    <title>Employee</title>
+    <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <title>Admin Department Management</title>
 </head>
-
-
 <body>
-
-
-
 <div class="container">
     <div class="navigation">
         <ul>
@@ -54,7 +45,6 @@
                     <span class="title">Leave Management</span>
                 </a>
             </li>
-            <li>
             <li><li>
                 <a href="/admin/admin-department">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
@@ -76,68 +66,59 @@
             </div>
         </div>
         <div>
-            <h1>Employees Profile</h1>
-            <div>
-                <style>
-                    .table {
-                        font-family: Arial, Helvetica, sans-serif;
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
+            <style>
+                .table {
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
 
-                    .table td, #customers th {
-                        border: 1px solid #ddd;
-                        padding: 8px;
-                        text-align: center;
-                    }
+                .table td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: center;
+                }
 
-                    .table tr:nth-child(even){background-color: #f2f2f2;}
+                .table tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
 
-                    .table tr:hover {background-color: #ddd;}
+                .table tr:hover {
+                    background-color: #ddd;
+                }
 
-                    .table th {
-                        padding-top: 12px;
-                        padding-bottom: 12px;
-                        text-align: left;
-                        background-color: navy;
-                        color: white;
-                        text-align: center;
-                    }
-                </style>
-                <table class="table">
-                    <thead>
+                .table th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: navy;
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+            <table class="table">
+                <h1>
+                    <center>Department Management</center>
+                </h1>
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Employee Type</th>
+                    <th scope="col">Department</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($data as $element)
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Employee Username</th>
-                        <th scope="col">Employee Password</th>
-                        <th scope="col">Employee Name</th>
-                        <th scope="col">Employee Birth</th>
-                        <th scope="col">Employee Contact</th>
-                        <th scope="col">Employee Email</th>
-                        <th scope="col">Action</th>
+                        @foreach($element->attributesToArray() as $department_employee)
+                            <td>{{$department_employee}}</td>
+                        @endforeach
                     </tr>
-                    </thead>
-                    <tbody>
-                    @foreach(\App\Models\Employee::all() as $employee)
-                        <tr>
-                        <td>{{$employee->employee_id}}</td>
-                            <td>{{$employee->emp_user_name}}</td>
-                            <td>{{$employee->emp_password}}</td>
-                            <td>{{$employee->emp_full_name}}</td>
-                            <td>{{$employee->emp_dob}}</td>
-                            <td>{{$employee->emp_contact}}</td>
-                            <td>{{$employee->emp_email}}</td>
-
-                            <td>
-                                <a href="{{url('edit/'.$employee->employee_id)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{url('delete/'.$employee->employee_id)}}" class="btn btn-primary">Delete</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <a href="/admin/admin_addemployee" class="btn">Add Employee</a>
+                @endforeach
+                </tbody>
+            </table>
+            <a href="{{url('admin/admin_add_department')}}">Add Employee Department</a>
         </div>
     </div>
 </div>

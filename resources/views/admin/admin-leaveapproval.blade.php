@@ -46,6 +46,12 @@
                 </a>
             </li>
             <li>
+                <a href="/admin/admin-department">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Department Management</span>
+                </a>
+            </li>
+            <li>
                 <a href="/login">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
