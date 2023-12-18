@@ -25,7 +25,5 @@
         <a href="/employee/employee-leave" class="btn" id="cancel">Cancel</a>
     </form>
 </div>
-
-
 </body>
 </html>

@@ -6,18 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
+    <link rel="stylesheet" href="{{asset('cssfile/style6.css')}}">
     <title>Employee Holiday</title>
 </head>
 <body>
 <div class="container">
     <div class="navigation">
         <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
-                    <span class="title">System Title</span>
-                </a>
-            </li>
+            <div class="logo">
+                <li>
+                    <a href="#">
+                        <span class="icon"><img src="/img/logo3.png"></span>
+                        <span class="title">WorkSync</span>
+                    </a>
+                </li>
+            </div>
             <li>
                 <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
@@ -100,7 +103,7 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Empployee Name</th>
+                    <th scope="col">Employee Name</th>
                     <th scope="col">Employee Time In</th>
                     <th scope="col">Employee Time Out</th>
                     <th scope="col">Action</th>
@@ -113,7 +116,7 @@
                                 <td>{{$attendance}}</td>
                             @endforeach
                             <td>
-                            <a href="{{url('editOut/'.$element->attendance_id)}}">Time Out</a>
+                            <a href="{{url('editOut/'.$element->attendance_id)}}" class="btn1">Time Out</a>
                         </td>
                     </tr>
                     @endforeach
