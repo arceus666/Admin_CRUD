@@ -17,7 +17,6 @@
 <div class="container">
     <div class="navigation">
         <ul>
-
             <div class="logo">
                 <li>
                     <a href="#">
