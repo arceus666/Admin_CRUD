@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+    <h3><center>Add Employee</center></h3>
     <form action="{{url('added')}}" method="post">
         @csrf
         <label for="emp_user_name">Username</label>

@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+    <h3><center>Add Department</center></h3>
     <form action="{{url('add')}}" method="post">
         <label for="emp_full_name">Employee Fullname</label>
         @csrf

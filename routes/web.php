@@ -84,6 +84,13 @@ Route::get('admin/admin_edit_departments', function (){
 Route::get('admin/admin_edit_holiday', function (){
     return view('admin/admin_edit_holiday');
 });
+Route::get('admin/admin_insert_department',function (){
+    return view('admin/admin_insert_department');
+});
+Route::get('editDepartmentName/{id}', [DepartmentController::class,'editDepartmentName']);
+Route::put('updateDepartmentName/{id}', [DepartmentController::class,'updateDepartmentName']);
+Route::get('deleteDepartmentName/{id}', [DepartmentController::class,'deleteDepartmentName']);
+Route::match(['get','post'],'insertDepartment',[DepartmentController::class,'insertDepartment']);
 Route::match(['get','post'], 'add',[AddEmployee::class,'addDep']);
 Route::get('editDepartment/{id}', [DepartmentController::class,'editDepartment']);
 Route::put('updateDepartment/{id}',[DepartmentController::class,'updateDepartment']);
@@ -166,6 +173,7 @@ Route::get('/employee/employee-department', function (){
 Route::get('/employee/employee-holiday', function (){
     return view('employee/employee-holiday');
 });
+
 
 
 

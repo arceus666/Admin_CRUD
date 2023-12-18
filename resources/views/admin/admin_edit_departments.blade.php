@@ -13,7 +13,7 @@
 
 <div class="container">
 
-    <h1>Update Department Information</h1>
+    <h1>Update Departments Information</h1>
     <form action="{{url('updateDepartment/'.$dep->dep_emp_id)}}" method="post">
             {{csrf_field()}}
             @method('PUT')

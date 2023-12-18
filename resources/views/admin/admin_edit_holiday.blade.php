@@ -13,7 +13,7 @@
 
 <div class="container">
 
-    <h1>Update Department Information</h1>
+    <h1>Update Holiday Information</h1>
     <form action="{{url('updateHoliday/'.$holiday->holiday_id)}}" method="post">
         {{csrf_field()}}
         @method('PUT')

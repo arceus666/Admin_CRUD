@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+
     <form action="{{url('addShift')}}" method="post">
         @csrf
         <label for="shift_name">Shift Name</label>

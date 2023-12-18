@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style2.css')}}">
-    <title>Add Location</title>
+    <title>Add Department Management</title>
 </head>
 <body>
 <div class="container">
-    <h3><center>Add Location</center></h3>
-    <form action="{{url('addLocation')}}" method="post">
+    <h1>Department Management</h1>
+    <form action="{{url('insertDepartment')}}" method="post">
         @csrf
-        <label for="location_name">Location Name</label>
-        <input type="text" name="location_name">
-        <button type="submit">Add Location</button>
+        <label for="holiday_name">Department Name</label>
+        <input type="text" name="dep_name">
+        <button type="submit">Add Department</button>
     </form>
 </div>
+
 
 </body>
 </html>

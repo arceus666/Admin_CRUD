@@ -138,14 +138,34 @@
                         <td>
                             <a href="{{url('editDepartment/'.$element->dep_emp_id)}}">Edit</a>
                             <a href="{{url('deleteDepartment/'.$element->dep_emp_id)}}">Delete</a>
-
                         </td>
-
                     </tr>
-
                 @endforeach
                 </tbody>
             </table>
+            <br><br><br>
+            <table class="table">
+                <h1><center>Available Departments</center></h1>
+                <thead>
+                <tr>
+                    <th scope="col">Department Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach(\App\Models\Department::all() as $department)
+                        <tr>
+
+                            <td>{{$department->dep_name}}</td>
+                            <td>
+                                <a href="{{url('editDepartmentName/'.$department->dep_id)}}">Edit</a>
+                                <a href="{{url('deleteDepartmentName/'.$department->dep_id)}}">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <a href="{{url('admin/admin_insert_department')}}">Add Department</a>
             <a href="{{url('admin/admin_add_department')}}">Add Employee Department</a>
         </div>
     </div>
