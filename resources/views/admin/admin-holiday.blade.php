@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+
     <title>Admin Holiday Management</title>
 </head>
 <body>
@@ -129,8 +130,8 @@
                            <td>{{$holiday->holiday_date}}</td>
                            <td>{{$holiday->holiday_description}}</td>
                             <td>
-                                <a href="{{url('editHoliday/'.$holiday->holiday_id)}}">Edit</a>
-                                <a href="{{url('deleteHoliday/'.$holiday->holiday_id)}}">Delete</a>
+                                <a href="{{url('editHoliday/'.$holiday->holiday_id)}}" class="btn">Edit</a>
+                                <a href="{{url('deleteHoliday/'.$holiday->holiday_id)}}" class="btn">Delete</a>
                             </td>
                         </tr>
                 @endforeach

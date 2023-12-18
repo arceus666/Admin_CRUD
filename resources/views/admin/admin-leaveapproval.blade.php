@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -128,10 +128,10 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col"><i class="fas fa-id-card"></i> ID</th>
+                    <th scope="col"><i class="fas fa-id-card"></i>  ID</th>
                     <th scope="col"><i class="fas fa-user"></i> Employee Name</th>
-                    <th scope="col"><i class="fa-solid fa-info"></i> Leave Subject</th>
-                    <th scope="col"><i class="fa-regular fa-calendar"></i>></i> Leave Date</th>
+                    <th scope="col"><i class="fa-solid fa-info"></i>    Leave Subject</th>
+                    <th scope="col"><i class="fa-regular fa-calendar"></i>  Leave Date</th>
                     <th scope="col"> Leave Status</th>
                     <th scope="col">Action</th>
 

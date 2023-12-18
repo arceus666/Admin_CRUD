@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style2.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <title>Add Location</title>
 </head>
 <body>
@@ -19,9 +21,41 @@
         <input type="time" name="shift_time_in">
         <label for="shift_time_out">Shift Time Out</label>
         <input type="time" name="shift_time_out">
-        <button type="submit">Add Shift</button>
+        <button type="submit" class="btn" id="submitButton">Add Shift</button>
     </form>
 </div>
+<div class="modal" id="myModal">
+    <div class="modal-content">
+        <span  class="close " onclick="closeModal()">&times;</span>
+        <p><i class="fa-solid fa-rotate"></i>  New shift has been  added successfully</p>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('myModal');
 
+        var btn = document.getElementById('submitButton');
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+    });
+</script>
 </body>
+
+
+
+
 </html>
