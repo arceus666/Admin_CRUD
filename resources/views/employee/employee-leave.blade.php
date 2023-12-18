@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="/employee/employee-profile">
+                <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Employee Profile</span>
 
@@ -43,6 +43,12 @@
                 <a href="/employee/employee-messages">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                     <span class="title">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="/employee/employee-department">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Employee Department</span>
                 </a>
             </li>
             <li>

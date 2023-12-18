@@ -20,7 +20,8 @@ return new class extends Migration
             $table->dateTime('attendance_time_out');
             $table->foreign('emp_full_name')
                 ->references('emp_full_name')
-                ->on('employee');
+                ->on('employee')
+                ->onDelete('cascade');
         });
     }
 

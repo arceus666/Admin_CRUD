@@ -53,6 +53,11 @@ class FetchAll extends Controller
         $data = Departments::all();
         return view('admin.admin-department', ['data' => $data]);
     }
+    public function fetchEmployeeDepartment(): \Illuminate\Contracts\View\View
+    {
+        $data = Departments::all();
+        return view('employee/employee-department', ['data' => $data]);
+    }
 
 
 }

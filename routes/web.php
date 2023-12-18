@@ -5,6 +5,11 @@ use App\Http\Controllers\AddEmployee;
 use App\Http\Controllers\EmployeeLeave;
 use App\Http\Controllers\Leaved;
 use App\Http\Controllers\FetchAll;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ShiftController;
+use App\Http\Controllers\SumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,14 +67,66 @@ Route::get('admin/admin-department', function (){
 Route::get('admin/admin_add_department', function (){
     return view('admin/admin_add_department');
 });
+Route::get('admin/admin-holiday', function (){
+    return view('admin/admin-holiday');
+});Route::get('admin/admin_add_holiday', function (){
+    return view('admin/admin_add_holiday');
+});
 Route::match(['get', 'post'], 'added', [AddEmployee::class,'added']);
 Route::get('delete/{id}', [AddEmployee::class,'remove']);
 Route::get('edit/{id}', [AddEmployee::class,'edit']);
 Route::put('update-data/{id}', [AddEmployee::class, 'update']);
 Route::get('editleave/{id}', [AddEmployee::class, 'editleave']);
 Route::put('update-status/{id}', [AddEmployee::class, 'edited']);
-Route::match(['get','post'], 'add',[AddEmployee::class,'addDep']);
 ///END OF ADMIN
+///Department Management
+Route::get('admin/admin_edit_departments', function (){
+    return view('admin/admin_edit_departments');
+});
+Route::get('admin/admin_edit_holiday', function (){
+    return view('admin/admin_edit_holiday');
+});
+Route::match(['get','post'], 'add',[AddEmployee::class,'addDep']);
+Route::get('editDepartment/{id}', [DepartmentController::class,'editDepartment']);
+Route::put('updateDepartment/{id}',[DepartmentController::class,'updateDepartment']);
+Route::get('deleteDepartment/{id}',[DepartmentController::class,'deleteDepartment']);
+/* Holiday Department*/
+Route::match(['get','post'],'addHoliday',[HolidayController::class,'addHoliday']);
+Route::get('editHoliday/{id}', [HolidayController::class,'editHoliday']);
+Route::put('updateHoliday/{id}',[HolidayController::class,'updateHoliday']);
+Route::get('deleteHoliday/{id}',[HolidayController::class,'deleteHoliday']);
+/*End of Department*/
+
+/* Admin Shift Management*/
+Route::get('admin/admin-shift', function (){
+    return view('admin/admin-shift');
+});
+Route::get('admin/admin_add_shift',function (){
+    return view('admin/admin_add_shift');
+});
+Route::match(['get','post'],'addShift',[ShiftController::class,'addShift']);
+Route::get('editShift/{id}',[ShiftController::class,'editShift']);
+Route::put('updateShift/{id}',[ShiftController::class,'updateShift']);
+Route::get('deleteShift/{id}',[ShiftController::class,'deleteShift']);
+
+
+/*Location Management*/
+Route::get('admin/admin-location', function (){
+    return view('admin/admin-location');
+});
+Route::get('admin/admin_add_location', function (){
+    return view('admin/admin_add_location');
+});
+Route::get('admin/admin_edit_location', function (){
+   return view('admin/admin_edit_location');
+});
+Route::match(['get','post'],'addLocation',[LocationController::class,'addLocation']);
+Route::get('editLocation/{id}',[LocationController::class,'editLocation']);
+Route::put('updateLocation/{id}', [LocationController::class,'updateLocation']);
+Route::get('deleteLocation/{id}',[LocationController::class,'deleteLocation']);
+/*End of Location Management
+
+
 
 /* Employee */
 Route::get('/employee/employee-dashboard', function (){
@@ -106,6 +163,13 @@ Route::put('update-out/{id}', [EmployeeLeave::class, 'updateOut']);
 Route::get('editLeave/{id}', [EmployeeLeave::class, 'editLeave']);
 Route::put('editLeaveLetter/{id}', [EmployeeLeave::class, 'editletter']);
 
+/*Employee Department*/
+Route::get('/employee/employee-department', function (){
+    return view('employee/employee-department');
+});
+
+
+
 /*  Fetch Data    */
 Route::get('/employee/employee-messages', [FetchAll::class, 'fetchAll'])->name('/employee/employee-messages');
 Route::get('/employee/employee-attendance', [FetchAll::class, 'fetchAttendance'])->name('/employee/employee-attendance');
@@ -113,6 +177,8 @@ Route::get('/employee/employee-leave', [FetchAll::class, 'fetchLeaved'])->name('
 Route::get('/admin/admin-attendance', [FetchAll::class, 'fetchAdmin'])->name('admin/admin-attendance');
 Route::get('/admin/admin-leaveapproval', [FetchAll::class, 'fetchAdminLeave'])->name('admin/admin-leaveapproval');
 Route::get('/admin/admin-department', [FetchAll::class, 'fetchDepartments'])->name('admin/admin-department');
+Route::get('/employee/employee-department', [FetchAll::class, 'fetchEmployeeDepartment'])->name('employee/employee-department');
+Route::get('/employee/employee-dashboard',[SumController::class,'sumofAll'])->name('employee/employee-dashboard');
 
 
 

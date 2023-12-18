@@ -21,7 +21,8 @@ return new class extends Migration
            $table->string('leave_status');
             $table->foreign('emp_full_name')
                 ->references('emp_full_name')
-                ->on('employee');
+                ->on('employee')
+                ->onDelete('cascade');
         });
     }
 
