@@ -163,8 +163,8 @@
 
                             <td>{{$department->dep_name}}</td>
                             <td>
-                                <a href="{{url('editDepartmentName/'.$department->dep_id)}}">Edit</a>
-                                <a href="{{url('deleteDepartmentName/'.$department->dep_id)}}">Delete</a>
+                                <a href="{{url('editDepartmentName/'.$department->dep_id)}}"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>Edit</a>
+                                <a href="{{url('deleteDepartmentName/'.$department->dep_id)}}"></a<ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                             </td>
                         </tr>
                     @endforeach
