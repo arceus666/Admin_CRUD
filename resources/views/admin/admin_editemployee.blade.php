@@ -16,7 +16,7 @@
     {{csrf_field()}}
     @method('PUT')
     <label for="emp_use_name">Username</label>
-    <   input type="text" name="emp_user_name" value="{{$employee->emp_user_name}}">
+    <input type="text" name="emp_user_name" value="{{$employee->emp_user_name}}">
     <label for="emp_password">Password</label>
     <input type="text" name="emp_password" value="{{$employee->emp_password}}">
     <label for="dep_name">Department Name</label>

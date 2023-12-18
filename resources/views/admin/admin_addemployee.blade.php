@@ -71,7 +71,7 @@
             @foreach(\App\Models\Gender::pluck('emp_gender') as $gender)
             <option value="{{$gender}}">{{$gender}}</option>
             @endforeach
-        </select>
+        </select><br><br>
         <button type="submit">Add Employee</button>
     </form>
 </div>

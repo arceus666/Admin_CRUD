@@ -27,7 +27,7 @@
             <li>
                 <a href="#">
                     <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
-                    <span class="title">System Title</span>
+                    <span class="title">WorkSync</span>
 
                 </a>
             </li>

@@ -84,58 +84,65 @@
             </div>
         </div>
         <div>
-            <style>
-                .table {
-                    font-family: Arial, Helvetica, sans-serif;
-                    border-collapse: collapse;
-                    width: 100%;
-                }
+            <h1><center>Admin Dashboard</center></h1>
+        </div>
+        <style>
+            .stats-container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin-top: 20px;
+            }
 
-                .table td, #customers th {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                    text-align: center;
-                }
+            .card {
+                width: 200px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 15px;
+                margin: 10px;
+                text-align: center;
+            }
 
-                .table tr:nth-child(even){background-color: #f2f2f2;}
+            .card h2 {
+                font-size: 18px;
+                margin-bottom: 8px;
+                color: #333;
+            }
 
-                .table tr:hover {background-color: #ddd;}
-
-                .table th {
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    text-align: left;
-                    background-color: navy;
-                    color: white;
-                    text-align: center;
-                }
-            </style>
-            <table class="table">
-                <caption><h1><center>Tracking Employees</center></h1></caption>
-                <thead>
-                <tr>
-                    <th scope="col">Total of Attendance</th>
-                    <th scope="col">Total of Employees</th>
-                    <th scope="col">Total of Departments</th>
-                    <th scope="col">Total of Holidays</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{$data}}</td>
-                    <td>{{$totalEmployees}}
-                    <td>{{$totalDepartments}}</td>
-                    <td>{{$holiday}}</td>
-                </tr>
-                </tbody>
+            .card p {
+                font-size: 20px;
+                font-weight: bold;
+                color: #555;
+            }
+        </style>
+        <div class="container">
+            <table>
             </table>
+            <div class="stats-container">
+                <div class="card">
+                    <h2>Total of Attendance</h2>
+                    <p>{{$data}}</p>
+                </div>
+                <div class="card">
+                    <h2>Total of Employees</h2>
+                    <p>{{$totalEmployees}}</p>
+                </div>
+                <div class="card">
+                    <h2>Total of Departments</h2>
+                    <p>{{$totalDepartments}}</p>
+                </div>
+                <div class="card">
+                    <h2>Total of Holidays</h2>
+                    <p>{{$holiday}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script>
-
     let toggle = document.querySelector('.toggle');
     let navigation = document.querySelector('.navigation');
     let main = document.querySelector('.main');
@@ -154,8 +161,5 @@
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
 </script>
-
-
-
 </body>
 </html>
