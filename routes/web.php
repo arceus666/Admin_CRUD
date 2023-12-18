@@ -183,6 +183,10 @@ Route::get('/employee/employee-dashboard',[SumController::class,'sumofAll'])->na
 Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class,'showLoginForm']);
 
+Route::get('/signin', function (){
+   return view('signin');
+});
+
 
 
 
