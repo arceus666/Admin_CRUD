@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <link rel="stylesheet"href="{{ asset('cssfile/table.css') }}">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+
 
     <title>Admin Holiday Management</title>
 </head>
@@ -15,7 +19,7 @@
         <ul>
             <li>
                 <a href="#">
-                    <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
+                    <span class="icon" ><ion-icon name="logo-wordpress"></ion-icon></span>
                     <span class="title">System Title</span>
 
                 </a>
@@ -130,14 +134,14 @@
                            <td>{{$holiday->holiday_date}}</td>
                            <td>{{$holiday->holiday_description}}</td>
                             <td>
-                                <a href="{{url('editHoliday/'.$holiday->holiday_id)}}" class="btn">Edit</a>
+                                <a href="{{url('editHoliday/'.$holiday->holiday_id)}}" class="btn btn-primary"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
                                 <a href="{{url('deleteHoliday/'.$holiday->holiday_id)}}" class="btn">Delete</a>
                             </td>
                         </tr>
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{url('/admin/admin_add_holiday')}}">Add Holiday</a>
+            <a href="{{url('/admin/admin_add_holiday')}}"class="btn btn-primary">Add Holiday</a>
         </div>
     </div>
 </div>

@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <link rel="stylesheet"href="{{ asset('cssfile/table.css') }}">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+
     <title>Admin Shift Management</title>
 </head>
 <body>
@@ -135,14 +139,14 @@
                         <td>{{$shift->shift_time_in}}</td>
                         <td>{{$shift->shift_time_out}}</td>
                         <td>
-                            <a href="{{url('editShift/'.$shift->shift_id)}}">Edit</a>
-                            <a href="{{url('deleteShift/'.$shift->shift_id)}}">Delete</a>
+                            <a href="{{url('editShift/'.$shift->shift_id)}}"> <ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                            <a href="{{url('deleteShift/'.$shift->shift_id)}}"> <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{url('admin/admin_add_shift')}}">Add Shift</a>
+            <a href="{{url('admin/admin_add_shift')}}"class="btn btn-primary">Add Shift</a>
         </div>
     </div>
 </div>
