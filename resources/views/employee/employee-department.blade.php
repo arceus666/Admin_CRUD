@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <title>Employee Attendance</title>
+    <title>Employee Dashboard</title>
 </head>
 <body>
 <div class="container">
@@ -93,31 +93,25 @@
                 }
             </style>
             <table class="table">
-                <h1><center>Attendance</center></h1>
+                <h1><center>Department</center></h1>
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Empployee Name</th>
-                    <th scope="col">Employee Time In</th>
-                    <th scope="col">Employee Time Out</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Employee Type</th>
+                    <th scope="col">Department Name</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($data as $element)
-                        <tr>
-                            @foreach($element->attributesToArray() as $attendance)
-                                <td>{{$attendance}}</td>
-                            @endforeach
-                            <td>
-                            <a href="{{url('editOut/'.$element->attendance_id)}}">Time Out</a>
-                        </td>
+                    <tr>
+                        @foreach($element->attributesToArray() as $department)
+                            <td>{{$department}}</td>
+                        @endforeach
                     </tr>
-                    @endforeach
+                @endforeach
                 </tbody>
-
             </table>
-            <a href="/employee/employee-addattendance">Attendance</a>
         </div>
     </div>
 </div>
@@ -143,6 +137,8 @@
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
 </script>
+
+
 
 </body>
 </html>

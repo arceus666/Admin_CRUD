@@ -13,14 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attendance', function (Blueprint $table) {
-            $table->id('attendance_id');
+        Schema::create('department-employee',function (Blueprint $table){
+
+            $table->id('dep_emp_id');
             $table->string('emp_full_name');
-            $table->dateTime('attendance_time_in');
-            $table->dateTime('attendance_time_out');
+            $table->string('emp_type_id');
+            $table->string('dep_name');
             $table->foreign('emp_full_name')
                 ->references('emp_full_name')
                 ->on('employee')
+                ->onDelete('cascade');
+            $table->foreign('emp_type_id')
+                ->references('emp_type_id')
+                ->on('employee_type')
+                ->onDelete('cascade');
+            $table->foreign('dep_name')
+                ->references('dep_name')
+                ->on('department')
                 ->onDelete('cascade');
         });
     }
@@ -32,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendance');
+        Schema::dropIfExists('departments');
     }
 };

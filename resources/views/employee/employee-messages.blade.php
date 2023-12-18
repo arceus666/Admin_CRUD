@@ -28,7 +28,7 @@ use App\Models\Leave;
                 </a>
             </li>
             <li>
-                <a href="/employee/employee-profile">
+                <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Employee Profile</span>
 
@@ -51,6 +51,12 @@ use App\Models\Leave;
                 <a href="/employee/employee-messages">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                     <span class="title">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="/employee/employee-department">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Employee Department</span>
                 </a>
             </li>
             <li>
@@ -99,6 +105,7 @@ use App\Models\Leave;
                 }
             </style>
             <table class="table">
+                <h1><center>Messages</center></h1>
                 <thead>
                 <tr>
                     <th>Employee ID</th>
@@ -117,7 +124,6 @@ use App\Models\Leave;
                     </tr>
                 @endforeach
                 </tbody>
-
             </table>
         </div>
     </div>
