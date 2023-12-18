@@ -10,6 +10,7 @@ use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\SumController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,6 @@ Route::get('/dbconn', function (){
 /*  Admin Profile   */
 Route::get('admin/admin-dashboard', function (){
     return view('admin/admin-dashboard');
-});
-Route::get('/login', function (){
-    return view('login');
 });
 Route::get('/admin', function (){
    return view('admin');
@@ -179,6 +177,12 @@ Route::get('/admin/admin-leaveapproval', [FetchAll::class, 'fetchAdminLeave'])->
 Route::get('/admin/admin-department', [FetchAll::class, 'fetchDepartments'])->name('admin/admin-department');
 Route::get('/employee/employee-department', [FetchAll::class, 'fetchEmployeeDepartment'])->name('employee/employee-department');
 Route::get('/employee/employee-dashboard',[SumController::class,'sumofAll'])->name('employee/employee-dashboard');
+
+/* Authentication For Admin and Employee */
+
+Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class,'showLoginForm']);
+
 
 
 

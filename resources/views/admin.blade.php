@@ -98,7 +98,8 @@
                 <label for="admin-password"><i class="fa-solid fa-lock"></i>Password</label>
             </div>
             <div class="input-field">
-                <a href="/admin/admin-dashboard" class="btn btn-primary" id="signin">Sign in</a>
+                <a href="/admin/admin-dashboard" class="btn btn-primary" id="signin">Sign in</a><br>
+                <a href="/login" class="btn btn-primary" id="signin">Login as Employee</a>
             </div>
         </form>
     </div>
