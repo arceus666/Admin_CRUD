@@ -124,7 +124,7 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col"><i class="fas fa-id-card"></i>  ID</th>
                     <th scope="col">Location Name</th>
                     <th scope="col">Action</th>
                 </tr>

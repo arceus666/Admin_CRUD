@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
     <link rel="stylesheet"href="{{ asset('cssfile/table.css') }}">
     <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
-    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <title>Admin Shift Management</title>
 </head>
@@ -124,7 +124,7 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col"><i class="fas fa-id-card"></i>  ID</th>
                     <th scope="col">Shift Name</th>
                     <th scope="col">Shift Time In</th>
                     <th scope="col">Shift Time Out</th>

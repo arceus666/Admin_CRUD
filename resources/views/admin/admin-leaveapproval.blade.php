@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
     <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
 
@@ -128,7 +129,7 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col"><i class="fas fa-id-card"></i>  ID</th>
+                    <th scope="col"><i class="fas fa-id-card"></i> ID</th>
                     <th scope="col"><i class="fas fa-user"></i> Employee Name</th>
                     <th scope="col"><i class="fa-solid fa-info"></i>    Leave Subject</th>
                     <th scope="col"><i class="fa-regular fa-calendar"></i>  Leave Date</th>
