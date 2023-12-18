@@ -99,32 +99,25 @@
                 }
             </style>
             <table class="table">
-                <h1><center>Leave Management and History</center></h1>
+                <h1><center>Holiday</center></h1>
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Empployee Name</th>
-                    <th scope="col">Leave Subject</th>
-                    <th scope="col">Leave Data</th>
-                    <th></th>
-                    <th scope="col"> Actions</th>
-
+                    <th scope="col">Holiday Name</th>
+                    <th scope="col">Holiday Date</th>
+                    <th scope="col"> Holiday Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($data as $element)
                     <tr>
-                        @foreach($element->attributesToArray() as $leave)
-                            <td>{{$leave}}</td>
+                        @foreach($element->attributesToArray() as $holiday)
+                            <td>{{$holiday}}</td>
                         @endforeach
-                        <td>
-                            <a href="{{url('editLeave/'.$element)}}">Edit</a>
-                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            <a href="/employee/employee_addleave">Add Leave</a>
         </div>
     </div>
 </div>
@@ -150,8 +143,6 @@
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
 </script>
-
-
 
 </body>
 </html>

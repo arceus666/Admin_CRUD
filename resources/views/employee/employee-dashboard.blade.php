@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <title>Employee Dashboard</title>
+    <title>Employee Holiday</title>
 </head>
 <body>
 <div class="container">
@@ -23,33 +22,39 @@
             <li>
                 <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Employee Profile</span>
+                    <span class="title">Employee Dashboard</span>
 
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-attendance">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Attendance</span>
+                    <span class="title">Employee Attendance</span>
 
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-leave">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
-                    <span class="title">Leave</span>
+                    <span class="title"> Employee Leave</span>
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-messages">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Messages</span>
+                    <span class="icon"><ion-icon name="mail-unread-outline"></ion-icon></span>
+                    <span class="title">Employee Messages</span>
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-department">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
                     <span class="title">Employee Department</span>
+                </a>
+            </li>
+            <li>
+                <a href="/employee/employee-holiday">
+                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                    <span class="title">Employee Holiday</span>
                 </a>
             </li>
             <li>
@@ -66,51 +71,51 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
         </div>
-        <div>
+                <h1><center>Employee Dashboard</center></h1>
+        <div class="wrapper">
             <style>
-                .table {
-                    font-family: Arial, Helvetica, sans-serif;
-                    border-collapse: collapse;
-                    width: 100%;
+                .wrapper{
+                    margin-top: 1.5rem;
+                    margin-left: 47rem;
                 }
-
-                .table td, #customers th {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                    text-align: center;
-                }
-
-                .table tr:nth-child(even){background-color: #f2f2f2;}
-
-                .table tr:hover {background-color: #ddd;}
-
-                .table th {
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    text-align: left;
-                    background-color: dodgerblue;
-                    color: white;
-                    text-align: center;
+                .wrapper .display #time{
+                    line-height: 85px;
+                    color: blue ;
+                    font-size: 55px;
+                    font-weight: 550;
+                    letter-spacing: 1px;
                 }
             </style>
-            <table class="table">
-                <caption><h1><center>Total of Attendance and Employees</center></h1></caption>
-                <thead>
-                <tr>
-                    <th scope="col">Total of Attendance</th>
-                    <th scope="col">Total of Employees</th>
-                    <th scope="col">Total of Departments</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{$data}}</td>
-                    <td>{{$totalEmployees}}
-                    <td>{{$totalDepartments}}</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="display">
+                <div id="time">12:00:00 PM</div>
+            </div>
+            <span></span>
+            <span></span>
         </div>
+        <script>
+            setInterval(()=>{
+                const time = document.querySelector("#time");
+                let date = new Date();
+                let hours = date.getHours();
+                let minutes = date.getMinutes();
+                let seconds = date.getSeconds();
+                let day_night = "AM";
+                if (hours > 12){
+                    day_night = "PM";
+                    hours = hours - 12;
+                }
+                if (hours <10){
+                    hours = "0"+hours;
+                }
+                if (minutes <10){
+                    minutes = "0"+ minutes;
+                }
+                if (seconds <10) {
+                    seconds = "0" + seconds;
+                }
+                time.textContent = hours +":"+minutes+":"+seconds+" "+day_night;
+            })
+        </script>
     </div>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

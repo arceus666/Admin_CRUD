@@ -160,10 +160,11 @@ Route::get('editOut/{id}', [EmployeeLeave::class, 'editOut']);
 Route::put('update-out/{id}', [EmployeeLeave::class, 'updateOut']);
 Route::get('editLeave/{id}', [EmployeeLeave::class, 'editLeave']);
 Route::put('editLeaveLetter/{id}', [EmployeeLeave::class, 'editletter']);
-
-/*Employee Department*/
 Route::get('/employee/employee-department', function (){
     return view('employee/employee-department');
+});
+Route::get('/employee/employee-holiday', function (){
+    return view('employee/employee-holiday');
 });
 
 
@@ -177,6 +178,7 @@ Route::get('/admin/admin-leaveapproval', [FetchAll::class, 'fetchAdminLeave'])->
 Route::get('/admin/admin-department', [FetchAll::class, 'fetchDepartments'])->name('admin/admin-department');
 Route::get('/employee/employee-department', [FetchAll::class, 'fetchEmployeeDepartment'])->name('employee/employee-department');
 Route::get('/admin/admin-dashboard',[SumController::class,'sumofAll'])->name('admin/admin-dashboard');
+Route::get('/employee/employee-holiday',[FetchAll::class,'fetchHoliday'])->name('employee/employee-holiday');
 
 /* Authentication For Admin and Employee */
 

@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <title>Employee Attendance</title>
+    <title>Employee Holiday</title>
 </head>
 <body>
 <div class="container">
@@ -22,33 +22,39 @@
             <li>
                 <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Employee Profile</span>
+                    <span class="title">Employee Dashboard</span>
 
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-attendance">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Attendance</span>
+                    <span class="title">Employee Attendance</span>
 
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-leave">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
-                    <span class="title">Leave</span>
+                    <span class="title"> Employee Leave</span>
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-messages">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Messages</span>
+                    <span class="icon"><ion-icon name="mail-unread-outline"></ion-icon></span>
+                    <span class="title">Employee Messages</span>
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-department">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
                     <span class="title">Employee Department</span>
+                </a>
+            </li>
+            <li>
+                <a href="/employee/employee-holiday">
+                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                    <span class="title">Employee Holiday</span>
                 </a>
             </li>
             <li>

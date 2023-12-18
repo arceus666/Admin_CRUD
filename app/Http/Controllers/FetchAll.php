@@ -6,6 +6,7 @@ use App\Models\Department;
 use App\Models\Departments;
 use App\Models\Employee;
 use App\Models\EmployeeType;
+use App\Models\Holiday;
 use App\Models\Leave;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -58,6 +59,12 @@ class FetchAll extends Controller
         $data = Departments::all();
         return view('employee/employee-department', ['data' => $data]);
     }
+    public function fetchHoliday(): \Illuminate\Contracts\View\View
+    {
+        $data = Holiday::all();
+        return view('employee/employee-holiday', ['data' => $data]);
+    }
+
 
 
 }
