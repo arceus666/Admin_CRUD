@@ -1,3 +1,6 @@
+/*CSS FOR ADD EMPLOYEE*/
+
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -37,32 +40,6 @@ body {
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
-.container .title {
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
-}
-
-.container .title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    background: black;
-}
-
-.container .desc h5 {
-    color: gray !important;
-    font-weight: normal !important;
-}
-
-.container form .user-details {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 form{
     display: flex;
     align-items: center;
@@ -73,34 +50,34 @@ form{
     padding: 0 10px;
 }
 
-form .user-details .input-box {
-    margin-bottom: 15px;
-    width: calc(100% / 3 - 20px);
-}
-
-.user-details .input-box input,
-.user-details .input-box textarea,
-.user-details .input-box select {
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-}
-
-form .gender-details,
-form .user-details .input-box.select-box {
-    width: 70%;
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
 form .gender-details .category {
     display: flex;
     height: 18px;
     justify-content: space-between;
     align-items: center;
+}
+
+label{
+    display: flex;
+    width: 260px;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+input{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 5px;
+    border-bottom: 1px solid rgba(109, 93, 93, 0.4);
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
 }
 
 /*.container form .button {
@@ -120,12 +97,6 @@ form .gender-details .category {
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
 }*/
-
-.container form .button input:hover {
-    color: rgb(253, 253, 253);
-    background-color: #2C7CE4;
-    transform: scale(1.05);
-}
 
 /*input {
     width: 100%;

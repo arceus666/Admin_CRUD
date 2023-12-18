@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style2.css')}}">
     <title>Leave Management</title>
 </head>
@@ -21,10 +20,9 @@
         <input type="datetime-local" name="attendance_time_in">
         <label for="attendance_time_out">Time Out</label>
         <input type="datetime-local" name="attendance_time_out">
-        <button type="submit">Submit Attendance</button>
+        <a href="/employee/employee-dashboard" class="btn" id="submit">Submit Attendance</a>
+        <a href="/employee/employee-attendance" class="btn" id="cancel">Cancel</a>
     </form>
 </div>
-
-
 </body>
 </html>

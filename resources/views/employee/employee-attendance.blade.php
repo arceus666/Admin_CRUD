@@ -16,21 +16,18 @@
                 <a href="#">
                     <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
                     <span class="title">System Title</span>
-
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Employee Dashboard</span>
-
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-attendance">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
                     <span class="title">Employee Attendance</span>
-
                 </a>
             </li>
             <li>
@@ -123,7 +120,9 @@
                 </tbody>
 
             </table>
-            <a href="/employee/employee-addattendance">Attendance</a>
+            <div class="btnEmp">
+                <a href="/employee/employee-addattendance" class="btnEmp2">Attendance</a>
+            </div>
         </div>
     </div>
 </div>
