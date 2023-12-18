@@ -1,3 +1,6 @@
+/*CSS FOR SIGN IN PAGE*/
+
+
 *{
     margin: 0;
     padding: 0;
@@ -13,7 +16,6 @@ body{
     background-image: url("/img/pc4.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-
 }
 
 .container{

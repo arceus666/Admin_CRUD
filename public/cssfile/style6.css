@@ -1,0 +1,157 @@
+/*CSS FOR ADD EMPLOYEE*/
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-image: url("/img/pc7.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 900px;
+    /*width: 100%;*/
+    /*background: #fff;*/
+    padding: 25px 85px;
+    /*border-radius: 5px;*/
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    /*box-shadow: 0 0 50px rgb(0, 0, 8);*/
+    position: relative;
+    background: transparent;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    min-width: 238px;
+    padding: 0 10px;
+}
+
+form .gender-details .category {
+    display: flex;
+    height: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label{
+    display: flex;
+    width: 260px;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+input{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 5px;
+    border-bottom: 1px solid rgba(109, 93, 93, 0.4);
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*.container form .button {
+    text-align: right;
+}
+
+/*.container form .button a {
+    text-decoration: none;
+}
+
+.container form .button input {
+    padding: 10px 20px;
+    background-color: #2C7CE4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}*/
+
+/*input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}*/
+
+/*input{
+    width: 100%;
+    height: 50px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    border: 1px solid #0F2167;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}*/
+
+/*a{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 10px 0;
+    border: 1px solid #2C7CE4;
+    transition: color 0.3s, background 0.3s, border-color 0.3s;
+}*/
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    margin: 10px 0;
+    border: 1px solid #2C7CE4;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+a:hover{
+    color: #000000;
+    background: #2C7CE4;
+    border-color: transparent;
+}
+/*label {
+     display: block;
+     margin-top: 10px;
+     margin-bottom: 5px;
+     font-weight: 500;
+     color: #ffffff;
+ }*/

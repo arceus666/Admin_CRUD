@@ -1,30 +1,37 @@
-
+<!--<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Login</title>
+</head>
+<body>
+    <form action="<?php  //echo $_SERVER['PHP_SELF'] ?>" METHOD="post">
+        <label for="admin">Admin Username</label>
+        <input type="text" name="admin-username">
+        <label for="admin-password">Password</label>
+        <input type="password" name="-admin-password">
+            <button>
+                <a href="/admin/admin-dashboard">Login</a>
+            </button>
+    </form>
+</body>
+</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('cssfile/style4.css')}}">
 </head>
-<style>
-    .wrapper{
-        margin-top: 10rem;
-       margin-left: 32rem;
-    }
-    .wrapper .display #time{
-        line-height: 85px;
-        color: blue ;
-        font-size: 55px;
-        font-weight: 550;
-        letter-spacing: 1px;
-    }
-</style>
 <body>
 <div class="container">
     <div class="signin">
+        <!--for employee login-->
         <form action="{{url('loginEmployee')}}" method="post" class="sign-in-form-employee">
             <h2 class="title">Sign in as Employee</h2>
             @csrf
@@ -36,8 +43,10 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="emp_password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn" id="signin">Sign in</button>
+            <a href="/employee/employee-dashboard" class="btn" id="signin">Sign in</a>
         </form>
+
+        <!--for admin login-->
         <form action="{{url('loginAdmin')}}" method="post" class="sign-in-form-admin">
             <h2 class="title admin-title">Sign in as Admin</h2>
             @csrf
@@ -49,40 +58,9 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="admin_password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn" id="signin">Sign in</button>
+            <a href="/admin/admin-dashboard" class="btn" id="signin">Sign in</a>
         </form>
     </div>
-    <div class="wrapper">
-        <div class="display">
-            <div id="time">12:00:00 PM</div>
-        </div>
-        <span></span>
-        <span></span>
-    </div>
-    <script>
-        setInterval(()=>{
-            const time = document.querySelector("#time");
-            let date = new Date();
-            let hours = date.getHours();
-            let minutes = date.getMinutes();
-            let seconds = date.getSeconds();
-            let day_night = "AM";
-            if (hours > 12){
-                day_night = "PM";
-                hours = hours - 12;
-            }
-            if (hours <10){
-                hours = "0"+hours;
-            }
-            if (minutes <10){
-                minutes = "0"+ minutes;
-            }
-            if (seconds <10) {
-                seconds = "0" + seconds;
-            }
-            time.textContent = hours +":"+minutes+":"+seconds+" "+day_night;
-        })
-    </script>
 
     <!--Side Small Info LEFT-->
     <!--<div class="panel left-panel">
