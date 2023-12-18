@@ -12,25 +12,24 @@
 <div class="container">
     <div class="navigation">
         <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
-                    <span class="title">System Title</span>
-
-                </a>
-            </li>
+            <div class="logo">
+                <li>
+                    <a href="#">
+                        <span class="icon"><img src="/img/logo3.png"></span>
+                        <span class="title">WorkSync</span>
+                    </a>
+                </li>
+            </div>
             <li>
                 <a href="/employee/employee-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Employee Dashboard</span>
-
                 </a>
             </li>
             <li>
                 <a href="/employee/employee-attendance">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
                     <span class="title">Employee Attendance</span>
-
                 </a>
             </li>
             <li>
@@ -140,8 +139,5 @@
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
 </script>
-
-
-
 </body>
 </html>

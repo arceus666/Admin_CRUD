@@ -6,7 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style2.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>// Get the modal
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('myModal');
 
+            var btn = document.getElementById('submitButton');
+
+            btn.onclick = function() {
+                modal.style.display = 'block';
+            };
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+
+            // Function to close the modal
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
     <title>Update Employee Profile</title>
 </head>
 <body>
@@ -47,9 +70,15 @@
     <input type="text" name="emp_email" value="{{$employee->emp_email}}">
     <label for="emp_joining_data">Employee Joining Date</label>
     <input type="date" name="emp_joining_data" value="{{$employee->emp_joining_data}}">
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-primary"id="submitButton">Update</button>
     <button type="button" class="btn btn-secondary" onclick="cancelUpdate()">Cancel</button>
 </form>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span  class="close " onclick="closeModal()">&times;</span>
+            <p><i class="fa-solid fa-user-check"></i>   Edited successfully</p>
+        </div>
+    </div>
     <script>
         function cancelUpdate() {
             window.location.href = "{{url('/admin/admin-viewemployee')}}";

@@ -6,19 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <link rel="stylesheet"href="{{ asset('cssfile/table.css') }}">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+
     <title>Admin Location Management</title>
 </head>
 <body>
 <div class="container">
     <div class="navigation">
         <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
-                    <span class="title">System Title</span>
 
-                </a>
-            </li>
+            <div class="logo">
+                <li>
+                    <a href="#">
+                        <span class="icon"><img src="/img/logo3.png"></span>
+                        <span class="title">WorkSync</span>
+                    </a>
+                </li>
+            </div>
             <li>
                 <a href="/admin/admin-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
@@ -120,7 +126,7 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col"><i class="fas fa-id-card"></i>  ID</th>
                     <th scope="col">Location Name</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -131,14 +137,15 @@
                         <td>{{$location->location_id}}</td>
                         <td>{{$location->location_name}}</td>
                         <td>
-                            <a href="{{url('editLocation/'.$location->location_id)}}">Edit</a>
-                            <a href="{{url('deleteLocation/'.$location->location_id)}}">Delete</a>
+                            <a href="{{url('editLocation/'.$location->location_id)}}"> <ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                            <a href="{{url('deleteLocation/'.$location->location_id)}}"> <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
+
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{url('admin/admin_add_location')}}">Add Location</a>
+            <a href="{{url('admin/admin_add_location')}}"class="btn btn-primary">Add Location</a>
         </div>
     </div>
 </div>

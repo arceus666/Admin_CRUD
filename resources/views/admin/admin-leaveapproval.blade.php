@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
     <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
 
@@ -16,13 +17,15 @@
 <div class="container">
     <div class="navigation">
         <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="logo-wordpress"></ion-icon></span>
-                    <span class="title">System Title</span>
 
-                </a>
-            </li>
+            <div class="logo">
+                <li>
+                    <a href="#">
+                        <span class="icon"><img src="/img/logo3.png"></span>
+                        <span class="title">WorkSync</span>
+                    </a>
+                </li>
+            </div>
             <li>
                 <a href="/admin/admin-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
@@ -130,8 +133,8 @@
                 <tr>
                     <th scope="col"><i class="fas fa-id-card"></i> ID</th>
                     <th scope="col"><i class="fas fa-user"></i> Employee Name</th>
-                    <th scope="col"><i class="fa-solid fa-info"></i> Leave Subject</th>
-                    <th scope="col"><i class="fa-regular fa-calendar"></i>></i> Leave Date</th>
+                    <th scope="col"><i class="fa-solid fa-info"></i>    Leave Subject</th>
+                    <th scope="col"><i class="fa-regular fa-calendar"></i>  Leave Date</th>
                     <th scope="col"> Leave Status</th>
                     <th scope="col">Action</th>
 
