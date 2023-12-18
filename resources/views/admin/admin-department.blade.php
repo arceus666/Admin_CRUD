@@ -20,23 +20,23 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/admin-profile">
+                <a href="/admin/admin-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Admin</span>
+                    <span class="title">Admin Dashboard</span>
 
                 </a>
             </li>
             <li>
                 <a href="/admin/admin-viewemployee">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Employees</span>
+                    <span class="title">Employees Management</span>
 
                 </a>
             </li>
             <li>
                 <a href="/admin/admin-attendance">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
-                    <span class="title">Attendance</span>
+                    <span class="title">Attendance Management</span>
                 </a>
             </li>
             <li>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
 
-    <title>Employee</title>
+    <title>Admin Employee Management</title>
 </head>
 
 
@@ -32,23 +32,23 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/admin-profile">
+                <a href="/admin/admin-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Admin</span>
+                    <span class="title">Admin Dashboard</span>
 
                 </a>
             </li>
             <li>
                 <a href="/admin/admin-viewemployee">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Employees</span>
+                    <span class="title">Employees Management</span>
 
                 </a>
             </li>
             <li>
                 <a href="/admin/admin-attendance">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
-                    <span class="title">Attendance</span>
+                    <span class="title">Attendance Management</span>
                 </a>
             </li>
             <li>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div>
-            <h1>Employees Profile</h1>
+            <h1><center>Employees Profile</center></h1>
             <div>
 
 

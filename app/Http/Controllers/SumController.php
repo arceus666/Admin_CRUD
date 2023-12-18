@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Departments;
 use App\Models\EmployeeType;
 use App\Models\Employee;
+use App\Models\Holiday;
 use Illuminate\Routing\Controller;
 
 use App\Models\Attendance;
@@ -17,11 +18,13 @@ class SumController extends Controller
         $totalAttendance = Attendance::count();
         $totalEmployees = Employee::count();
         $totalDepartments = Departments::count();
+        $holiday = Holiday::count();
 
-    return view('employee/employee-dashboard', [
+    return view('admin/admin-dashboard', [
         'data' => $totalAttendance,
         'totalEmployees' => $totalEmployees,
-        'totalDepartments' => $totalDepartments
+        'totalDepartments' => $totalDepartments,
+        'holiday'=>$holiday
     ]);
 }
 }

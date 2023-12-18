@@ -176,12 +176,13 @@ Route::get('/admin/admin-attendance', [FetchAll::class, 'fetchAdmin'])->name('ad
 Route::get('/admin/admin-leaveapproval', [FetchAll::class, 'fetchAdminLeave'])->name('admin/admin-leaveapproval');
 Route::get('/admin/admin-department', [FetchAll::class, 'fetchDepartments'])->name('admin/admin-department');
 Route::get('/employee/employee-department', [FetchAll::class, 'fetchEmployeeDepartment'])->name('employee/employee-department');
-Route::get('/employee/employee-dashboard',[SumController::class,'sumofAll'])->name('employee/employee-dashboard');
+Route::get('/admin/admin-dashboard',[SumController::class,'sumofAll'])->name('admin/admin-dashboard');
 
 /* Authentication For Admin and Employee */
 
-Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class,'showLoginForm']);
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/loginEmployee', [LoginController::class, 'loginEmployee'])->name('loginEmployee');
+Route::post('/loginAdmin', [LoginController::class, 'loginAdmin'])->name('loginAdmin');
 
 Route::get('/signin', function (){
    return view('signin');

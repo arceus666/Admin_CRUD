@@ -20,23 +20,23 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/admin-profile">
+                <a href="/admin/admin-dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Admin</span>
+                    <span class="title">Admin Dashboard</span>
 
                 </a>
             </li>
             <li>
                 <a href="/admin/admin-viewemployee">
                     <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                    <span class="title">Employees</span>
+                    <span class="title">Employees Management</span>
 
                 </a>
             </li>
             <li>
                 <a href="/admin/admin-attendance">
                     <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
-                    <span class="title">Attendance</span>
+                    <span class="title">Attendance Management</span>
                 </a>
             </li>
             <li>
@@ -82,6 +82,53 @@
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
+        </div>
+        <div>
+            <style>
+                .table {
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                .table td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: center;
+                }
+
+                .table tr:nth-child(even){background-color: #f2f2f2;}
+
+                .table tr:hover {background-color: #ddd;}
+
+                .table th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: navy;
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+            <table class="table">
+                <caption><h1><center>Tracking Employees</center></h1></caption>
+                <thead>
+                <tr>
+                    <th scope="col">Total of Attendance</th>
+                    <th scope="col">Total of Employees</th>
+                    <th scope="col">Total of Departments</th>
+                    <th scope="col">Total of Holidays</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{$data}}</td>
+                    <td>{{$totalEmployees}}
+                    <td>{{$totalDepartments}}</td>
+                    <td>{{$holiday}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
