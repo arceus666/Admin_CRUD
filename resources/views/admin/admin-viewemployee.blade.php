@@ -11,7 +11,7 @@
     <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+    <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
 
     <title>Admin Employee Management</title>
 </head>
@@ -24,12 +24,11 @@
 <div class="container">
     <div class="navigation">
         <ul>
-
             <div class="logo">
                 <li>
                     <a href="#">
                         <span class="icon"><img src="/img/logo3.png"></span>
-                        <span class="title">WorkSync</span>
+                        <span class="title"><b>WorkSync</b></span>
                     </a>
                 </li>
             </div>
@@ -140,8 +139,8 @@
         </div>
     </div>
 </div>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="module" src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")}}"></script>
+<script nomodule src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")}}"></script>
 <script>
 
     let toggle = document.querySelector('.toggle');

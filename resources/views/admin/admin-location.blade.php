@@ -21,7 +21,7 @@
                 <li>
                     <a href="#">
                         <span class="icon"><img src="/img/logo3.png"></span>
-                        <span class="title">WorkSync</span>
+                        <span class="title"><b>WorkSync</b></span>
                     </a>
                 </li>
             </div>
@@ -137,8 +137,9 @@
                         <td>{{$location->location_id}}</td>
                         <td>{{$location->location_name}}</td>
                         <td>
-                            <a href="{{url('editLocation/'.$location->location_id)}}"> <ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
-                            <a href="{{url('deleteLocation/'.$location->location_id)}}"> <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
+                            <a href="{{url('editLocation/'.$location->location_id)}}" class="btn btn-primary "><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                            <a href="{{url('deleteLocation/'.$location->location_id)}}"  class="btn btn-primary" > <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
+
 
                         </td>
                     </tr>

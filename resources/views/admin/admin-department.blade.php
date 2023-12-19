@@ -6,9 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
-    <link rel="stylesheet" href="{{asset('cssfile/table.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
+    <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
 
     <title>Admin Department Management</title>
 </head>
@@ -16,12 +14,11 @@
 <div class="container">
     <div class="navigation">
         <ul>
-
             <div class="logo">
                 <li>
                     <a href="#">
                         <span class="icon"><img src="/img/logo3.png"></span>
-                        <span class="title">WorkSync</span>
+                        <span class="title"><b>WorkSync</b></span>
                     </a>
                 </li>
             </div>
@@ -119,6 +116,9 @@
                     color: white;
                     text-align: center;
                 }
+                td{
+                    font-weight: bold;
+                }
             </style>
             <table class="table">
                 <h1>
@@ -126,25 +126,22 @@
                 </h1>
                 <thead>
                 <tr>
-                    <th scope="col"><i class="fas fa-id-card"></i>  ID</th>
-                    <th scope="col"><i class="fas fa-user"></i>  Employee Name</th>
-                    <th scope="col"><i class="fa-regular fa-address-book"></i>  Employee Type</th>
-                    <th scope="col"><i class="fa-solid fa-building-user"></i>  Department</th>
-                    <th scope="col"> Action</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Employee Type</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($data as $element)
-
                     <tr>
-
                         @foreach($element->attributesToArray() as $department_employee)
                             <td>{{$department_employee}}</td>
                         @endforeach
                         <td>
-                            <a href="{{url('editDepartment/'.$element->dep_emp_id)}}"> <ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
-                            <a href="{{url('deleteDepartment/'.$element->dep_emp_id)}}"> <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
-
+                            <a href="{{url('editDepartment/'.$element->dep_emp_id)}}" class="btn btn-primary">Edit</a>
+                            <a href="{{url('deleteDepartment/'.$element->dep_emp_id)}}" class="btn btn-primary">Delete</a>
                         </td>
                     </tr>
                 @endforeach
@@ -162,18 +159,18 @@
                 <tbody>
                     @foreach(\App\Models\Department::all() as $department)
                         <tr>
-
                             <td>{{$department->dep_name}}</td>
                             <td>
-                                <a href="{{url('editDepartmentName/'.$department->dep_id)}}"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>Edit</a>
-                                <a href="{{url('deleteDepartmentName/'.$department->dep_id)}}"></a<ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
+                                <a href="{{url('editDepartmentName/'.$department->dep_id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url('deleteDepartmentName/'.$department->dep_id)}}" class="btn btn-primary">Delete</a>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <a href="{{url('admin/admin_insert_department')}}" class="btn">Add Department</a>
-            <a href="{{url('admin/admin_add_department')}}"class="btn">Add Employee Department</a>
+            <br>
+            <a href="{{url('admin/admin_insert_department')}}" class="btn btn-primary">Add Department</a>
+            <a href="{{url('admin/admin_add_department')}}" class="btn btn-primary">Add Employee Department</a>
         </div>
     </div>
 </div>

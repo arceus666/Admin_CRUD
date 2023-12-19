@@ -17,12 +17,11 @@
 <div class="container">
     <div class="navigation">
         <ul>
-
             <div class="logo">
                 <li>
                     <a href="#">
                         <span class="icon"><img src="/img/logo3.png"></span>
-                        <span class="title">WorkSync</span>
+                        <span class="title"><b>WorkSync</b></span>
                     </a>
                 </li>
             </div>

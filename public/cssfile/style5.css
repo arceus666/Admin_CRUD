@@ -42,7 +42,7 @@ body {
 
 .container .title {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
 }
 
@@ -110,7 +110,7 @@ form .gender-details .category {
     text-align: right;
 }
 
-/*.container form .button a {
+.container form .button a {
     text-decoration: none;
 }
 
@@ -124,7 +124,7 @@ form .gender-details .category {
     transition: transform 0.3s, background-color 0.3s;
 }*/
 
-.container form .button input:hover {
+.container form .btn input:hover {
     color: rgb(253, 253, 253);
     background-color: #2C7CE4;
     transform: scale(1.05);
@@ -187,3 +187,7 @@ a:hover{
      font-weight: 500;
      color: #ffffff;
  }*/
+#submit{
+    margin-top: 25px;
+    border: #2C7CE4;
+}
