@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
     <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
-
     <title>Admin Department Management</title>
 </head>
 <body>

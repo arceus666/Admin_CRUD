@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <title>Employee Holiday</title>
+    <title>Employee Attendance</title>
 </head>
 <body>
 <div class="container">
@@ -123,7 +123,7 @@
 
             </table>
             <div class="btnEmp">
-                <a href="/employee/employee_addleave"  class="btnEmp2"><h1>Attendance</h1></a>
+                <a href="/employee/employee-addattendance" class="btnEmp2"><h1>Attendance</h1></a>
             </div>
         </div>
     </div>
