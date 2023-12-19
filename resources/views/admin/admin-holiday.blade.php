@@ -136,8 +136,8 @@
                            <td>{{$holiday->holiday_date}}</td>
                            <td>{{$holiday->holiday_description}}</td>
                             <td>
-                                <a href="{{url('editHoliday/'.$holiday->holiday_id)}}" class="btn btn-primary"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
-                                <a href="{{url('deleteHoliday/'.$holiday->holiday_id)}}" class="btn">Delete</a>
+                                <a href="{{url('editHoliday/'.$holiday->holiday_id)}}" class="btn btn-primary "><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                                <a href="{{url('deleteHoliday/'.$holiday->holiday_id)}}"  class="btn btn-primary" > <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                             </td>
                         </tr>
                 @endforeach
