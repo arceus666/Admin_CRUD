@@ -11,6 +11,7 @@
 <div class="container">
     <form action="{{url('addLeave')}}" method="post">
         @csrf
+        <h1><center>Add Leave</center></h1>
         <label for="emp_full_name">Employee Name</label>
         <select name="emp_full_name">
             @foreach(\App\Models\Employee::all()->pluck('emp_full_name')->unique() as $employee)
@@ -21,7 +22,7 @@
         <input type="text" name="leave_subject">
         <label for="leave_date">Leave Date</label>
         <input type="date" name="leave_date">
-        <a href="/employee/employee-dashboard" class="btn" id="submit">Submit Attendance</a>
+        <button type="submit" class="btn" id="submit">Add Leave</button>
         <a href="/employee/employee-leave" class="btn" id="cancel">Cancel</a>
     </form>
 </div>

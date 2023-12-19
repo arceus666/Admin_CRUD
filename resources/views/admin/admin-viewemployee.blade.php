@@ -28,7 +28,7 @@
                 <li>
                     <a href="#">
                         <span class="icon"><img src="/img/logo3.png"></span>
-                        <span class="title">WorkSync</span>
+                        <span class="title"><b>WorkSync</b></span>
                     </a>
                 </li>
             </div>
@@ -139,8 +139,8 @@
         </div>
     </div>
 </div>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="module" src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")}}"></script>
+<script nomodule src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")}}"></script>
 <script>
 
     let toggle = document.querySelector('.toggle');
