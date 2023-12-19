@@ -147,6 +147,7 @@
                 @endforeach
                 </tbody>
             </table>
+            <br>
             <a href="{{url('admin/admin_add_shift')}}"class="btn btn-primary">Add Shift</a>
         </div>
     </div>

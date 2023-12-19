@@ -146,6 +146,7 @@
                 @endforeach
                 </tbody>
             </table>
+            <br>
             <a href="{{url('admin/admin_add_location')}}"class="btn btn-primary">Add Location</a>
         </div>
     </div>
