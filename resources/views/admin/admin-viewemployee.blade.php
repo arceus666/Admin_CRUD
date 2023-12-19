@@ -235,7 +235,6 @@
             document.getElementById('employeeModal').style.display = 'block';
         }
 
-        // Use JavaScript to handle click event on ta   ble rows
         let tableRows = document.querySelectorAll('#employeeTable tbody tr');
         let employeeModal = document.getElementById('employeeModal');
 
@@ -254,12 +253,10 @@
                 displayEmployeeModal(employeeInfo); });
         });
 
-        // Close modal when the modal is clicked
         employeeModal.addEventListener('click', function() {
             this.style.display = 'none';
         });
 
-        // Prevent modal from closing when the content inside the modal is clicked
         document.getElementById('employeeModalBody').addEventListener('click', function(event) {
             event.stopPropagation();
         });
