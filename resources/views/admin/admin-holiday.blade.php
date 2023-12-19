@@ -142,7 +142,9 @@
                         </tr>
                 @endforeach
                 </tbody>
+
             </table>
+            <br>
             <a href="{{url('/admin/admin_add_holiday')}}"class="btn btn-primary">Add Holiday</a>
         </div>
     </div>
