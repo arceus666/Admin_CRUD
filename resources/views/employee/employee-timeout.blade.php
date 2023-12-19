@@ -22,8 +22,7 @@
                     <label for="attendance_time_out">Time Out</label>
                     <input type="datetime-local" name="attendance_time_out">
                     <button type="submit">Time Out</button>
-
-
+                    <a href="/employee/employee-attendance" class="btn0">Cancel</a>
         </form>
     </div>
 </body>

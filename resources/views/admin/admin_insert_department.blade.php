@@ -39,6 +39,8 @@
         <label for="holiday_name">Department Name</label>
         <input type="text" name="dep_name">
         <button type="submit" id="submitButton">Add Department</button>
+        <!--ERROR CODE cr.Eledy
+        <button onclick="window.location.href='admin/admin-department'">Cancel</button>-->
     </form>
 </div>
 <div class="modal" id="myModal">

@@ -47,6 +47,7 @@
         <label for="holiday_description">Holiday Description</label>
         <input type="text" name="holiday_description" value="{{$holiday->holiday_description}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
+        <button onclick="window.location.href='admin/admin-holiday'">Cancel</button>
     </form>
 </div>
 <div class="modal" id="myModal">

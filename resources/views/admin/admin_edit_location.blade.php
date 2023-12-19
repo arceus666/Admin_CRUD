@@ -44,6 +44,8 @@
         <label for="location_name">Location Name</label>
         <input type="text" name="location_name" value="{{$location->location_name}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update Location</button>
+        <button onclick="window.location.href='admin/admin-location'">Cancel</button>
+
     </form>
 </div>
 </div>

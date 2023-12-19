@@ -24,6 +24,8 @@
                 <label for="leave_date">Leave Date</label>
                 <input type="date" name="leave_date" value="{{$leave->leave_date}}">
                 <button type="submit">Submit</button>
+                <button onclick="window.location.href='employee/employee-leave'">Cancel</button>
+
     </form>
         @endforeach
     @endforeach

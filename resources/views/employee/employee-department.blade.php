@@ -144,8 +144,5 @@
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
 </script>
-
-
-
 </body>
 </html>

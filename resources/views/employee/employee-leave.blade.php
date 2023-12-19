@@ -124,7 +124,7 @@
                 </tbody>
             </table>
             <div class="btnEmp">
-             <a href="/employee/employee_addleave"  class="btnEmp2">Add Leave</a>
+                <a href="/employee/employee_addleave"  class="btnEmp2"><h1>Add Leave</h1></a>
             </div>
         </div>
     </div>

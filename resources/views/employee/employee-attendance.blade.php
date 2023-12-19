@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style3.css')}}">
-    <link rel="stylesheet" href="{{asset('cssfile/style6.css')}}">
     <title>Employee Holiday</title>
 </head>
 <body>
@@ -116,15 +115,15 @@
                                 <td>{{$attendance}}</td>
                             @endforeach
                             <td>
-                            <a href="{{url('editOut/'.$element->attendance_id)}}" class="btn1">Time Out</a>
-                        </td>
-                    </tr>
+                                <a href="{{url('editOut/'.$element->attendance_id)}}" class="btn1">Time Out</a>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
 
             </table>
             <div class="btnEmp">
-                <a href="/employee/employee-addattendance" class="btnEmp2">Attendance</a>
+                <a href="/employee/employee_addleave"  class="btnEmp2"><h1>Attendance</h1></a>
             </div>
         </div>
     </div>

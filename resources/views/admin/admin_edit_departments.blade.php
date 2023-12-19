@@ -55,6 +55,7 @@
             @endforeach
         </select>
         <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
+        <button onclick="window.location.href='admin/admin-department'">Cancel</button>
     </form>
 </div>
 <div class="modal" id="myModal">

@@ -98,7 +98,7 @@ form{
     color: #444;
 }
 
-a.btn {
+button {
     display: inline-block;
     padding: 10px 20px;
     color: #000;
@@ -110,7 +110,7 @@ a.btn {
     transition: color 0.3s, background 0.3s, border-color 0.3s;
 }
 
-a.btn:hover {
+button:hover {
     color: #fff;
     background: #0F2167;
     border-color: transparent;

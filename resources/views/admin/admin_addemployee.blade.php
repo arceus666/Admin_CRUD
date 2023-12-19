@@ -89,6 +89,8 @@
         <input type="date" name="emp_joining_data">
 
         <button type="submit">Add Employee</button>
+        <!--    ERROR CODE cr.Eledy
+        <button onclick="window.location.href='admin/admin-viewemployee'">Cancel</button>-->
     </form>
 </div>
 </body>

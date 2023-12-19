@@ -44,6 +44,7 @@
         <label for="dep_name">Department Name</label>
         <input type="text" name="dep_name" value="{{$dep->dep_name}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
+        <button onclick="window.location.href='admin/admin-department'">Cancel</button>
     </form>
 </div>
 <div class="modal" id="myModal">
