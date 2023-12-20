@@ -140,7 +140,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <a href="{{url('admin/admin_add_emptype')}}" class="btn btn-primary">Add Employee Type</a>
+            <a href="{{url('admin-functionality/addemployeetype')}}" class="btn btn-primary">Add Employee Type</a>
         </div>
     </div>
 </div>

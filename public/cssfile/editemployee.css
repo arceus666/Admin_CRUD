@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30vh;
 }
 
 @keyframes backgroundAnimation {
@@ -142,12 +143,12 @@ button:hover {
     background-color: #0056b3;
 }
 label {
-     display: block;
-     margin-top: 10px;
-     margin-bottom: 5px;
-     font-weight: bold;
-     color: #333;
- }
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
 
 /* Modal styles */
 .modal {

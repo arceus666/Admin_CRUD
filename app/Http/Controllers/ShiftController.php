@@ -20,7 +20,7 @@ class ShiftController extends Controller
     }
     public function editShift($id){
         $shift = Shift::find($id);
-        return view('admin/admin_edit_shift', compact('shift'));
+        return view('admin-functionality/editshift', compact('shift'));
     }
     public function updateShift(Request $request, $id){
         $shift = Shift::find($id);

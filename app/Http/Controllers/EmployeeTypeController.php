@@ -18,7 +18,7 @@ class EmployeeTypeController extends Controller
     }
     public function editType($id){
         $emp = EmployeeType::find($id);
-        return view('admin/admin_edit_emptype', compact('emp'));
+        return view('admin-functionality/editemployeetype', compact('emp'));
     }
     public function updateEmpType(Request $request, $id){
         $emp = EmployeeType::find($id);

@@ -153,7 +153,7 @@
                 </tbody>
             </table>
             <br>
-            <a href="{{url('admin/admin_add_location')}}"class="btn btn-primary">Add Location</a>
+            <a href="{{url('admin-functionality/addlocation')}}"class="btn btn-primary">Add Location</a>
         </div>
     </div>
 </div>

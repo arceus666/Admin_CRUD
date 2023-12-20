@@ -31,7 +31,8 @@ class EmployeeLeave extends Controller
     }
     public function editLeave($id){
         $leave = Leave::find($id);
-        return view('employee/employee-editleave',compact('leave'));
+        $employee = Employee::find($id);
+        return view('employee/employee-editleave',compact('leave','employee'));
     }
     public function editletter(Request $request, $id){
         $leave = Leave::find($id);

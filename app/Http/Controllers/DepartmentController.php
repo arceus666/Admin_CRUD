@@ -15,7 +15,7 @@ class DepartmentController extends Controller
 {
    public function editDepartment($id){
         $dep = Departments::find($id);
-        return view('/admin/admin_edit_departments', compact('dep'));
+        return view('admin-functionality/editdepartments', compact('dep'));
    }
    public function updateDepartment(Request $request, $id){
         $department = Departments::find($id);
@@ -38,7 +38,7 @@ class DepartmentController extends Controller
    }
    public function editDepartmentName($id){
        $dep = Department::find($id);
-       return view('admin/admin_edit_department', compact('dep'));
+       return view('admin-functionality/editdepartment', compact('dep'));
    }
    public function updateDepartmentName(Request $request, $id){
        $dep = Department::find($id);

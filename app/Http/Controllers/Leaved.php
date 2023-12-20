@@ -21,9 +21,4 @@ class Leaved extends Controller
         ]);
         return redirect('/employee/employee-leave');
     }
-    public function getLeaveData(): \Illuminate\Contracts\View\View
-    {
-        $data = Leave::all();
-        return view('admin/admin-dashboard', ['data' => $data]);
-    }
 }

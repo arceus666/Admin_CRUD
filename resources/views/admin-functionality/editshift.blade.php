@@ -31,7 +31,7 @@
             }
         });
     </script>
-    <title>Leave Status</title>
+    <title>Update Shift Status</title>
 </head>
 <body>
 

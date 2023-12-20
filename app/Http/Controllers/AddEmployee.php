@@ -43,7 +43,7 @@ class AddEmployee extends Controller
 
     public function edit($id){
             $employee = Employee::find($id);
-            return view('/admin/admin_editemployee',compact('employee'));
+            return view('/admin-functionality/editemployee',compact('employee'));
     }
 
     public function update(Request $request, $id){

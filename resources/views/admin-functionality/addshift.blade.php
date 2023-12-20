@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-        <h1><center>Shift Management</center></h1>
+    <h1><center>Shift Management</center></h1>
     <form action="{{url('addShift')}}" method="post">
         @csrf
         <label for="shift_name">Shift Name</label>
