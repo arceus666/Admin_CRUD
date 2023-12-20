@@ -9,10 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('cssfile/style.css') }}" rel="stylesheet">
     <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
-
+    <link rel="icon" href="/img/logo2.png" type="image/png">
     <title>Admin Employee Management</title>
 </head>
 

@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style5.css')}}">
+    <link rel="icon" href="/img/logo2.png" type="image/png">
     <title>Employee Leave</title>
 </head>
 <body>

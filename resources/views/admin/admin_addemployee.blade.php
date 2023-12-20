@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee</title>
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/employee.css')}}">
-
+    <link rel="icon" href="/img/logo2.png" type="image/png">
 </head>
 <body>
 <div class="container">

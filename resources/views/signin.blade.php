@@ -8,6 +8,7 @@
     <title>Sign In</title>
     <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('cssfile/style4.css')}}">
+    <link rel="icon" href="/img/logo2.png" type="image/png">
 </head>
 <body>
 <div class="container">

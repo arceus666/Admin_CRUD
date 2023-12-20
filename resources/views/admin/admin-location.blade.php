@@ -9,7 +9,7 @@
     <link rel="stylesheet"href="{{ asset('cssfile/table.css') }}">
     <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
     <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
-
+    <link rel="icon" href="/img/logo2.png" type="image/png">
     <title>Admin Location Management</title>
 </head>
 <body>
