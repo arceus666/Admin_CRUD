@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("/img/image.jpg");
-    background-size: 200% 100%; /* Twice as wide to fit two images */
+    background-size: 200% 100%;
     animation: backgroundAnimation 10s infinite linear;
     height: 80vh;
     display: flex;
@@ -149,7 +149,6 @@ label {
      font-weight: bold;
      color: #333;
  }
-/* Your existing styles */
 
 /* Modal styles */
 .modal {
