@@ -151,7 +151,7 @@
                             <td>{{$leave}}</td>
                         @endforeach
                             <td>
-                                <a href="{{url('editleave/'.$element->leave_id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url('editleave/'.$element->leave_id)}}" class="btn btn-primary"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
                             </td>
                         </tr>
                     @endforeach

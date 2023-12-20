@@ -135,8 +135,8 @@
                             <td>{{$employeetype}}</td>
                         @endforeach
                         <td>
-                            <a href="{{url('editType/'.$element->employee_type_id)}}" class="btn btn-primary">Edit</a>
-                            <a href="{{url('deleteType/'.$element->employee_type_id)}}" class="btn btn-primary">Delete</a>
+                            <a href="{{url('editType/'.$element->employee_type_id)}}" class="btn btn-primary"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                            <a href="{{url('deleteType/'.$element->employee_type_id)}}" class="btn btn-primary"><ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                         </td>
                     </tr>
                 @endforeach
