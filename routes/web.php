@@ -210,7 +210,7 @@ Route::match(['get','post'],'addLeave',[Leaved::class,'addLeave']);
 Route::get('editOut/{id}', [EmployeeLeave::class, 'editOut']);
 Route::put('update-out/{id}', [EmployeeLeave::class, 'updateOut']);
 Route::get('editLeave/{id}', [EmployeeLeave::class, 'editLeave']);
-Route::put('editLeaveLetter/{id}', [EmployeeLeave::class, 'editletter']);
+Route::put('updateLeave/{id}', [EmployeeLeave::class, 'editletter']);
 Route::get('/employee/employee-department', function (){
     return view('employee/employee-department');
 });

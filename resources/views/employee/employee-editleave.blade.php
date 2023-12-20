@@ -22,7 +22,7 @@
         <label for="shift_time_in">Leave Date</label>
         <input type="date" name="leave_date" value="{{$leave->leave_date}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update Leave</button>
-        <button onclick="window.location.href='admin/admin-shift'">Cancel</button>
+        <button onclick="window.location.href='employee/employee-leave'">Cancel</button>
     </form>
 
 </div>
