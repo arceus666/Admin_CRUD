@@ -36,7 +36,8 @@
         <label for="location_name">Location Name</label>
         <input type="text" name="location_name">
         <button type="submit" id="submitButton" class="btn">Add Location</button>
-        <a href="admin/admin-location">Cancel</a>
+        <a href="{{url('/admin/admin-location')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">
@@ -45,5 +46,6 @@
         <p><i class="fa-solid fa-map-location"></i> New location has been  added successfully</p>
     </div>
 </div>
+
 </body>
 </html>

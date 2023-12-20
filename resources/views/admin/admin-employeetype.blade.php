@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <link rel="stylesheet" href="{{asset('cssfile/table.css')}}">
+
     <title>Employee Type Management</title>
 </head>
 <body>
@@ -133,8 +135,8 @@
                             <td>{{$employeetype}}</td>
                         @endforeach
                         <td>
-                            <a href="{{url('editType/'.$element->employee_type_id)}}">Edit</a>
-                            <a href="{{url('deleteType/'.$element->employee_type_id)}}">Delete</a>
+                            <a href="{{url('editType/'.$element->employee_type_id)}}" class="btn btn-primary"><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
+                            <a href="{{url('deleteType/'.$element->employee_type_id)}}" class="btn btn-primary"><ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                         </td>
                     </tr>
                 @endforeach

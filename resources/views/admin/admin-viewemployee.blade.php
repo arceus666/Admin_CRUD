@@ -241,6 +241,7 @@
             document.getElementById('employeeModal').style.display = 'block';
         }
 
+//for table hover modal add info of employee
         let tableRows = document.querySelectorAll('#employeeTable tbody tr');
         let employeeModal = document.getElementById('employeeModal');
 

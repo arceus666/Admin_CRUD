@@ -16,7 +16,7 @@
         @csrf
         <label for="emp_type_id">Employee Type Name</label>
         <input type="text" name="emp_type_id">
-        <button type="submit" class="btn" id="submitButton">Add Employee Type</button>
+        <button type="submit" class="btn" id="submitButton">Add Holiday</button>
     </form>
 </div>
 <div class="modal" id="myModal">

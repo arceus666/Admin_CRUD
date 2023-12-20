@@ -44,6 +44,8 @@
         <label for="emp_type_id">Employee Type Name</label>
         <input type="text" name="emp_type_id" value="{{$emp->emp_type_id}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update Employee Type</button>
+        <a href="{{url('/admin/admin-employeetype')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">

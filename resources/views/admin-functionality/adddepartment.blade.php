@@ -37,6 +37,7 @@
         <br>
         <hr>
         <button type="submit" id="submitButton">Add Employee Department</button>
+        <a href="{{url('/admin/admin-department')}}" class="btncancel">Cancel</a>
     </form>
 </div>
 <div class="modal" id="myModal">

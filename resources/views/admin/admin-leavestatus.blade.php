@@ -27,7 +27,7 @@
         <label for="leave_status">Leave Status</label>
         <input type="text" name="leave_status" value="{{$leave->leave_status}}">
         <button type="submit" class="btn btn-primary">Update</button>
-        <!--<button onclick="window.location.href='admin/admin-leaveapproval'">Cancel</button>-->
+        <a href="{{url('/admin/admin-leaveapproval')}}" class="btncancel">Cancel</a>
     </form>
 </div>
 </body>

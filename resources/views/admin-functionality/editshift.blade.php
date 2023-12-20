@@ -48,7 +48,7 @@
         <label for="shift_time_out">Shift Time Out</label>
         <input type="time" name="shift_time_out" value="{{$shift->shift_time_out}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update Location</button>
-        <button onclick="window.location.href='admin/admin-shift'">Cancel</button>
+        <a href="{{url('/admin/admin-shift')}}" class="btncancel">Cancel</a>
 
     </form>
 </div>
