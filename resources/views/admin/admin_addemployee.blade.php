@@ -89,7 +89,7 @@
         <input type="date" name="emp_joining_data" required>
 
         <button type="submit">Add Employee</button>
-        <a href="{{url('admin/admin-viewemployee')}}">Cancel</a>
+        <a href="{{url('/admin/admin-viewemployee')}}" class="btncancel">Cancel</a>
     </form>
 </div>
 </body>

@@ -211,6 +211,15 @@ label {
     border-radius: 4px;
     box-sizing: border-box;
 }
+.btncancel{
+    background-color: #8199ef;
+    color: #000000;
+    padding:8.8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
 
 
 

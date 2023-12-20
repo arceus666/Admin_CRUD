@@ -22,6 +22,8 @@
         <label for="shift_time_out">Shift Time Out</label>
         <input type="time" name="shift_time_out">
         <button type="submit" class="btn" id="submitButton">Add Shift</button>
+        <a href="{{url('/admin/admin-shift')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">

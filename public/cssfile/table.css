@@ -49,7 +49,7 @@
 }
 
 @media (max-width: 768px) {
-    .table th, .table td {
+   .btn  .table th, .table td {
         font-size: 14px;
     }
 }

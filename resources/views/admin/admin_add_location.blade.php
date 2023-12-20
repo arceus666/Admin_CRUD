@@ -36,6 +36,8 @@
         <label for="location_name">Location Name</label>
         <input type="text" name="location_name">
         <button type="submit" id="submitButton" class="btn">Add Location</button>
+        <a href="{{url('/admin/admin-location')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">
