@@ -3,7 +3,7 @@
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    overflow-x: auto; /* Add horizontal scrollbar for smaller screens */
+    overflow-x: auto;
 }
 
 .table td,
@@ -37,14 +37,14 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 20px;
-    background-color: #ffffff; /* Cute pink color, you can change it */
+    background-color: #ffffff;
     color: #04175e;
     border: 2px solid #8199ef;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
-    background-color: #91a7ff; /* Slightly darker pink on hover, you can change it */
+    background-color: #91a7ff;
     color: #04175e;
 }
 
