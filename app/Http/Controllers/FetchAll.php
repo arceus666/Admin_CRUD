@@ -64,6 +64,12 @@ class FetchAll extends Controller
         $data = Holiday::all();
         return view('employee/employee-holiday', ['data' => $data]);
     }
+    public function fetchEmployeeType(): \Illuminate\Contracts\View\View
+    {
+        $data = EmployeeType::all();
+        return view('admin/admin-employeetype', ['data' => $data]);
+    }
+
 
 
 

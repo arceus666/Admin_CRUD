@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 namespace App\Http\Controllers;
 use App\Models\Employee;
+use App\Models\EmployeeType;
 use App\Models\Leave;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -19,5 +20,10 @@ class Leaved extends Controller
             'emp_full_name'=>$request->input('emp_full_name')
         ]);
         return redirect('/employee/employee-leave');
+    }
+    public function getLeaveData(): \Illuminate\Contracts\View\View
+    {
+        $data = Leave::all();
+        return view('admin/admin-dashboard', ['data' => $data]);
     }
 }

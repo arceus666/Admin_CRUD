@@ -75,6 +75,12 @@
                 </a>
             </li>
             <li>
+                <a href="/admin/admin-employeetype">
+                    <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                    <span class="title">EmployeeTypeManagement</span>
+                </a>
+            </li>
+            <li>
                 <a href="/login">
                     <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>

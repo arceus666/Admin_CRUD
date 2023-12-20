@@ -12,7 +12,7 @@ body {
     background-image: url("/img/image.jpg");
     background-size: 200% 100%;
     animation: backgroundAnimation 10s infinite linear;
-    height: 145vh;
+    height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;

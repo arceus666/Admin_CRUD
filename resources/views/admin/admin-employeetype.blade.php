@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
-    <title>Admin Dashboard</title>
+    <title>Employee Type Management</title>
 </head>
 <body>
 <div class="container">
@@ -71,6 +71,12 @@
                 </a>
             </li>
             <li>
+                <a href="/admin/admin-employeetype">
+                    <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                    <span class="title">EmployeeTypeManagement</span>
+                </a>
+            </li>
+            <li>
                 <a href="/login">
                     <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
@@ -85,59 +91,56 @@
             </div>
         </div>
         <div>
-            <h1><center>Admin Dashboard</center></h1>
-        </div>
-        <style>
-            .stats-container {
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                margin-top: 20px;
-            }
+            <style>
+                .table {
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
 
-            .card {
-                width: 200px;
-                background-color: #fff;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                padding: 15px;
-                margin: 10px;
-                text-align: center;
-            }
+                .table td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: center;
+                }
 
-            .card h2 {
-                font-size: 18px;
-                margin-bottom: 8px;
-                color: #333;
-            }
+                .table tr:nth-child(even){background-color: #f2f2f2;}
 
-            .card p {
-                font-size: 20px;
-                font-weight: bold;
-                color: #555;
-            }
-        </style>
-        <div class="container">
-            <table>
+                .table tr:hover {background-color: #ddd;}
+
+                .table th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: navy;
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+            <table class="table">
+                <h1><center>Employee Type Management</center></h1>
+                <thead>
+                <tr>
+                    <th scope="col"> ID</th>
+                    <th scope="col">Employee Type</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($data as $element)
+                    <tr>
+                        @foreach($element->attributesToArray() as $employeetype)
+                            <td>{{$employeetype}}</td>
+                        @endforeach
+                        <td>
+                            <a href="{{url('editType/'.$element->employee_type_id)}}">Edit</a>
+                            <a href="{{url('deleteType/'.$element->employee_type_id)}}">Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
             </table>
-            <div class="stats-container">
-                <div class="card">
-                    <h2>Total of Attendance</h2>
-                    <p>{{$data}}</p>
-                </div>
-                <div class="card">
-                    <h2>Total of Employees</h2>
-                    <p>{{$totalEmployees}}</p>
-                </div>
-                <div class="card">
-                    <h2>Total of Departments</h2>
-                    <p>{{$totalDepartments}}</p>
-                </div>
-                <div class="card">
-                    <h2>Total of Holidays</h2>
-                    <p>{{$holiday}}</p>
-                </div>
-            </div>
+            <a href="{{url('admin/admin_add_emptype')}}" class="btn btn-primary">Add Employee Type</a>
         </div>
     </div>
 </div>
