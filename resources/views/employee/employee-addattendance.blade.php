@@ -25,10 +25,6 @@
                 <label for="attendance_time_in">Time In</label>
                 <input type="datetime-local" name="attendance_time_in">
             </div>
-            <div class="input-box">
-                <label for="attendance_time_out">Time Out</label>
-                <input type="datetime-local" name="attendance_time_out">
-            </div>
             <div class="button-container">
                 <button type="submit" class="btn">Add Attendance</button>
                 <a href="/employee/employee-attendance" class="btn" id="cancel">Cancel</a>
