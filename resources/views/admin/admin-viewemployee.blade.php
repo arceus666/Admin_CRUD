@@ -9,9 +9,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('cssfile/style.css') }}" rel="stylesheet">
     <link href="{{ asset('cssfile/table.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.2.2/esm/ionicons.min.js">
-    <link rel="icon" href="/img/logo2.png" type="image/png">
+    <style>
+        #employeeModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: linear-gradient(135deg, #8199ef, #3a1b6a);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 8px;
+        }
+
+        #employeeModalClose {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        #employeeModalBody {
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #employeeModalBody p {
+            margin-bottom: 20px; /* Increased space between each piece of information */
+            display: flex;
+            flex-direction: column; /* Set flex direction to column */
+            margin-right: 40px;
+
+        }
+
+        #employeeModalBody p::before {
+            content: attr(data-label);
+            font-weight: bold;
+            margin-bottom: 5px; /* Add space between label and value */
+            margin-right: 10px;
+        }
+
+
+        #employeeModalBody p:last-child {
+            margin-bottom: 0; /* Remove margin for the last item */
+        }
+
+        .hidden-cell {
+            display: none;
+        }
+    </style>
     <title>Admin Employee Management</title>
 </head>
 
@@ -101,7 +154,7 @@
             <div>
 
 
-                <table class="table">
+                <table class="table" id="employeeTable">
                     <thead>
                     <tr>
                         <th scope="col"><i class="fas fa-id-card"></i>  ID </th>
@@ -124,22 +177,40 @@
                             <td>{{$employee->emp_dob}}</td>
                             <td>{{$employee->emp_contact}}</td>
                             <td>{{$employee->emp_email}}</td>
+                            <td class="hidden-cell">{{$employee->emp_type_id}}</td>
+                            <td class="hidden-cell">{{$employee->emp_address}}</td>
+                            <td class="hidden-cell">{{$employee->emp_gender}}</td>
+                            <td class="hidden-cell">{{$employee->dep_name}}</td>
+                            <td class="hidden-cell">{{$employee->shift_name}}</td>
+                            <td class="hidden-cell">{{$employee->shift_time_in}}</td>
+                            <td class="hidden-cell">{{$employee->shift_time_out}}</td>
+                            <td class="hidden-cell">{{$employee->location_name}}</td>
+                            <td class="hidden-cell">{{$employee->emp_joining_data}}</td>
+
 
                             <td>
                                 <a href="{{url('edit/'.$employee->employee_id)}}" class="btn btn-primary "><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
                                 <a href="{{url('delete/'.$employee->employee_id)}}" class="btn btn-primary" > <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
                             </td>
+
+
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
-            <a href="/admin/admin_addemployee" class="btn " style="color:#314f81" ><ion-icon name="person-add-outline"></ion-icon><span class="title">Add Employee</span></a>
+            <div id="employeeModal" ><h2>Additional Information :</h2>
+                <br>
+                <div id="employeeModalClose">&times;</div>
+                <div id="employeeModalBody"></div>
+            </div>
+            <br>
+            <a href= "/admin/admin_addemployee" class="btn " style="color:#314f81"> <ion-icon name="person-add-outline"></ion-icon><span class="title">Add Employee</span></a>
         </div>
     </div>
 </div>
 <script type="module" src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")}}"></script>
-<script nomodule src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")}}"></script>
+<script nomodule src="{{asset("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")}}"> </script>
 <script>
 
     let toggle = document.querySelector('.toggle');
@@ -159,6 +230,36 @@
     }
     list.forEach((item)=> item.addEventListener('mouseover', activeLink)
     );
+        function displayEmployeeModal(employeeInfo) {
+            document.getElementById('employeeModalBody').innerHTML = employeeInfo;
+            document.getElementById('employeeModal').style.display = 'block';
+        }
+
+        let tableRows = document.querySelectorAll('#employeeTable tbody tr');
+        let employeeModal = document.getElementById('employeeModal');
+
+        tableRows.forEach(function(row) {
+            row.addEventListener('click', function() {
+                let employeeInfo =
+                    '<p data-label="Type:">' + this.cells[7].textContent + '</p>' +
+                    '<p data-label="Address:">' + this.cells[8].textContent + '</p>' +
+                    '<p data-label="Gender:">' + this.cells[9].textContent + '</p>' +
+                    '<p data-label="Department:">' + this.cells[10].textContent + '</p>' +
+                    '<p data-label="Shift:">' + this.cells[11].textContent + '</p>' +
+                    '<p data-label=" In:">' + this.cells[12].textContent + '</p>' +
+                    '<p data-label=" out:">' + this.cells[13].textContent + '</p>' +
+                    '<p data-label="Location:">' + this.cells[14].textContent + '</p>' +
+                    '<p data-label="Joined:">' + this.cells[15].textContent + '</p>';
+                displayEmployeeModal(employeeInfo); });
+        });
+
+        employeeModal.addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+
+        document.getElementById('employeeModalBody').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
 </script>
 
 

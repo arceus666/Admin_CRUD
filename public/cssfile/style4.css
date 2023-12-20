@@ -159,17 +159,18 @@ button:hover {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    color: #df4adf;
+    color: #000000;
     text-align: center;
     text-decoration: none;
     border-radius: 50px;
     margin: 10px 0;
-    border: 1px solid #df4adf;
+    border: 1px solid #0F2167;
+    background: transparent;
     transition: color 0.3s, background 0.3s, border-color 0.3s;
 }
 
 .btn:hover {
-    color: #fff;
-    background: #520852;
+    color: #ffffff;
+    background: #0F2167;
     border-color: transparent;
 }
