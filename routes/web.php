@@ -11,6 +11,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\SumController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\EmployeeTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,12 @@ Route::get('admin/admin-holiday', function (){
 });Route::get('admin/admin_add_holiday', function (){
     return view('admin/admin_add_holiday');
 });
+Route::get('admin/admin-employeetype', function (){
+    return view('admin/admin-employeetype');
+});
+Route::get('admin/admin_add_emptype', function (){
+    return view('admin/admin_add_emptype');
+});
 Route::match(['get', 'post'], 'added', [AddEmployee::class,'added']);
 Route::get('delete/{id}', [AddEmployee::class,'remove']);
 Route::get('edit/{id}', [AddEmployee::class,'edit']);
@@ -101,6 +108,12 @@ Route::get('editHoliday/{id}', [HolidayController::class,'editHoliday']);
 Route::put('updateHoliday/{id}',[HolidayController::class,'updateHoliday']);
 Route::get('deleteHoliday/{id}',[HolidayController::class,'deleteHoliday']);
 /*End of Department*/
+
+/*Employee Type Management*/
+Route::match(['get', 'post'], 'addEmployeeType',[EmployeeTypeController::class,'addEmployeeType']);
+Route::get('editType/{id}',[EmployeeTypeController::class,'editType']);
+Route::put('updateEmpType/{id}',[EmployeeTypeController::class,'updateEmpType']);
+Route::get('deleteType/{id}', [EmployeeTypeController::class,'deleteType']);
 
 /* Admin Shift Management*/
 Route::get('admin/admin-shift', function (){
@@ -187,6 +200,7 @@ Route::get('/admin/admin-department', [FetchAll::class, 'fetchDepartments'])->na
 Route::get('/employee/employee-department', [FetchAll::class, 'fetchEmployeeDepartment'])->name('employee/employee-department');
 Route::get('/admin/admin-dashboard',[SumController::class,'sumofAll'])->name('admin/admin-dashboard');
 Route::get('/employee/employee-holiday',[FetchAll::class,'fetchHoliday'])->name('employee/employee-holiday');
+Route::get('/admin/admin-employeetype',[FetchAll::class,'fetchEmployeeType'])->name('admin/admin-employeetype');
 
 /* Authentication For Admin and Employee */
 
@@ -197,9 +211,7 @@ Route::post('/loginAdmin', [LoginController::class, 'loginAdmin'])->name('loginA
 Route::get('/signin', function (){
    return view('signin');
 });
-
-
-
+Route::get('/signin', [LoginController::class, 'showLoginForm']);
 
 
 
