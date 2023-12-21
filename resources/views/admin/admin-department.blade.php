@@ -175,8 +175,8 @@
                 </tbody>
             </table>
             <br>
-            <a href="{{url('admin/admin_insert_department')}}" class="btn btn-primary">Add Department</a>
-            <a href="{{url('admin/admin_add_department')}}" class="btn btn-primary">Add Employee Department</a>
+            <a href="{{url('admin-functionality/insertdepartment')}}" class="btn btn-primary">Add Department</a>
+            <a href="{{url('admin-functionality/adddepartment')}}" class="btn btn-primary">Add Employee Department</a>
         </div>
     </div>
 </div>

@@ -211,7 +211,7 @@
                 <div id="employeeModalBody"></div>
             </div>
             <br>
-            <a href= "/admin/admin_addemployee" class="btn " style="color:#314f81"> <ion-icon name="person-add-outline"></ion-icon><span class="title">Add Employee</span></a>
+            <a href= "/admin-functionality/addemployee" class="btn " style="color:#314f81"> <ion-icon name="person-add-outline"></ion-icon><span class="title">Add Employee</span></a>
         </div>
     </div>
 </div>
@@ -241,6 +241,7 @@
             document.getElementById('employeeModal').style.display = 'block';
         }
 
+//for table hover modal add info of employee
         let tableRows = document.querySelectorAll('#employeeTable tbody tr');
         let employeeModal = document.getElementById('employeeModal');
 

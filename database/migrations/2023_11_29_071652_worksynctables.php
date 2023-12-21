@@ -58,7 +58,7 @@ return new class extends Migration
             $table->string('emp_full_name')->index();
             $table->date('emp_dob');
             $table->string('emp_address');
-            $table->integer('emp_contact');
+            $table->string('emp_contact');
             $table->string('emp_email');
             $table->foreign('shift_name')
                 ->references('shift_name')

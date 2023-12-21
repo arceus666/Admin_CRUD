@@ -21,6 +21,8 @@
         <label for="leave_date">Holiday Description</label>
         <input type="text" name="holiday_description">
         <button type="submit" class="btn" id="submitButton">Add Holiday</button>
+        <a href="{{url('/admin/admin-holiday')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">

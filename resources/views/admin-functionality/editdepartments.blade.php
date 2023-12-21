@@ -31,7 +31,7 @@
             }
         });
     </script>
-    <title>Leave Status</title>
+    <title>Update Departments Information</title>
 </head>
 <body>
 
@@ -39,24 +39,24 @@
 
     <h1>Update Departments Information</h1>
     <form action="{{url('updateDepartment/'.$dep->dep_emp_id)}}" method="post">
-            {{csrf_field()}}
-            @method('PUT')
+        {{csrf_field()}}
+        @method('PUT')
         <label for="emp_full_name">Employee Name</label>
         <input type="text" name="emp_full_name" value="{{$dep->emp_full_name}}">
         <label for="emp_type_id">Employee Type ID</label>
-            <select name="emp_type_id">
-                @foreach(\App\Models\EmployeeType::pluck('emp_type_id') as $emp_type)
+        <select name="emp_type_id">
+            @foreach(\App\Models\EmployeeType::pluck('emp_type_id') as $emp_type)
                 <option value="{{$emp_type}}">{{$emp_type}}</option>
-                @endforeach
-            </select>
+            @endforeach
+        </select>
         <label for="dep_name">Department Name</label>
         <select name="dep_name">
             @foreach(\App\Models\Department::pluck('dep_name') as $dep)
-            <option value="{{$dep}}">{{$dep}}</option>
+                <option value="{{$dep}}">{{$dep}}</option>
             @endforeach
-        </select>
+        </select><br><br>
         <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
-        <button onclick="window.location.href='admin/admin-department'">Cancel</button>
+        <a href="{{url('/admin/admin-department')}}" class="btncancel">Cancel</a>
     </form>
 </div>
 <div class="modal" id="myModal">

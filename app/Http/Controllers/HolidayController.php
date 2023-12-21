@@ -22,7 +22,7 @@ class HolidayController extends Controller
    }
    public function editHoliday($id){
        $holiday = Holiday::find($id);
-       return view('/admin/admin_edit_holiday', compact('holiday'));
+       return view('/admin-functionality/editholiday', compact('holiday'));
    }
    public function updateHoliday(Request $request, $id){
        $holiday = Holiday::find($id);

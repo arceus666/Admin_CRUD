@@ -146,15 +146,15 @@
                         <td>{{$shift->shift_time_in}}</td>
                         <td>{{$shift->shift_time_out}}</td>
                         <td>
-                            <a href="{{url('editShift/'.$shift->shift_id)}}" class="btn btn-primary "><ion-icon name="create-outline">Edit</ion-icon><span class="title" >Edit</span> </a>
-                            <a href="{{url('deleteShift/'.$shift->shift_id)}}"  class="btn b>tn-primary">  <ion-icon name="trash-outline">Delete</ion-icon><span class="title" >Delete</span></a>
+                            <a href="{{url('editShift/'.$shift->shift_id)}}" class="btn btn-primary "><ion-icon name="create-outline"></ion-icon><span class="title" >Edit</span> </a>
+                            <a href="{{url('deleteShift/'.$shift->shift_id)}}"  class="btn b>tn-primary">  <ion-icon name="trash-outline"></ion-icon><span class="title" >Delete</span></a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
             <br>
-            <a href="{{url('admin/admin_add_shift')}}"class="btn btn-primary">Add Shift</a>
+            <a href="{{url('admin-functionality/addshift')}}"class="btn btn-primary">Add Shift</a>
         </div>
     </div>
 </div>

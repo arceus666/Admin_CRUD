@@ -18,7 +18,7 @@ class LocationController extends Controller
     }
     public function editLocation($id){
         $location = Location::find($id);
-        return view('/admin/admin_edit_location', compact('location'));
+        return view('/admin-functionality/editlocation', compact('location'));
     }
     public function updateLocation(Request $request, $id){
         $location = Location::find($id);

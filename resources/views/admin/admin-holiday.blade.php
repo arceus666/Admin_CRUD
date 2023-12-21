@@ -150,7 +150,7 @@
 
             </table>
             <br>
-            <a href="{{url('/admin/admin_add_holiday')}}"class="btn btn-primary">Add Holiday</a>
+            <a href="{{url('admin-functionality/addholiday')}}"class="btn btn-primary">Add Holiday</a>
         </div>
     </div>
 </div>

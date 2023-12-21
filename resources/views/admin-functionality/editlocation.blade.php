@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{{asset('cssfile/style2.css')}}">
-
+    <link rel="icon" href="/img/logo2.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>// Get the modal
         document.addEventListener('DOMContentLoaded', function() {
@@ -31,19 +31,21 @@
             }
         });
     </script>
-    <title>Leave Status</title>
+    <title>Update Location</title>
 </head>
 <body>
 
 <div class="container">
 
     <h1>Update Location Information</h1>
-    <form action="{{url('updateEmpType/'.$emp->employee_type_id)}}" method="post">
+    <form action="{{url('updateLocation/'.$location->location_id)}}" method="post">
         {{csrf_field()}}
         @method('PUT')
-        <label for="emp_type_id">Employee Type Name</label>
-        <input type="text" name="emp_type_id" value="{{$emp->emp_type_id}}">
-        <button type="submit" class="btn btn-primary" id="submitButton">Update Employee Type</button>
+        <label for="location_name">Location Name</label>
+        <input type="text" name="location_name" value="{{$location->location_name}}">
+        <button type="submit" class="btn btn-primary" id="submitButton">Update Location</button>
+        <a href="{{url('/admin/admin-location')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">

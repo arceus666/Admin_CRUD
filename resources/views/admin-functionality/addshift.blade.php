@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-        <h1><center>Shift Management</center></h1>
+    <h1><center>Shift Management</center></h1>
     <form action="{{url('addShift')}}" method="post">
         @csrf
         <label for="shift_name">Shift Name</label>
@@ -22,6 +22,8 @@
         <label for="shift_time_out">Shift Time Out</label>
         <input type="time" name="shift_time_out">
         <button type="submit" class="btn" id="submitButton">Add Shift</button>
+        <a href="{{url('/admin/admin-shift')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">

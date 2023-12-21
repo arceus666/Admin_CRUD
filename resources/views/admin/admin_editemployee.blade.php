@@ -71,7 +71,7 @@
     <label for="emp_joining_data">Employee Joining Date</label>
     <input type="date" name="emp_joining_data" value="{{$employee->emp_joining_data}}">
     <button type="submit" class="btn btn-primary"id="submitButton">Update</button>
-    <button type="button" class="btn btn-secondary" onclick="cancelUpdate()">Cancel</button>
+    <a href="{{url('/admin/admin-viewemployee')}}" class="btncancel">Cancel</a>
 </form>
     <div class="modal" id="myModal">
         <div class="modal-content">
@@ -79,11 +79,7 @@
             <p><i class="fa-solid fa-user-check"></i>   Edited successfully</p>
         </div>
     </div>
-    <script>
-        function cancelUpdate() {
-            window.location.href = "{{url('/admin/admin-viewemployee')}}";
-        }
-    </script>
+
 
 </div>
 </body>

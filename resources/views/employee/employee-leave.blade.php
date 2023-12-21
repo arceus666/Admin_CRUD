@@ -118,7 +118,7 @@
                             <td>{{$leave}}</td>
                         @endforeach
                         <td>
-                            <a href="{{url('editLeave/'.$element)}}" class="btn1">Edit</a>
+                            <a href="{{url('editLeave/'.$element->leave_id)}}" class="btn1">Edit</a>
                         </td>
                     </tr>
                 @endforeach

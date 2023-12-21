@@ -31,24 +31,22 @@
             }
         });
     </script>
-    <title>Leave Status</title>
+
+    <title>Department Management</title>
 </head>
 <body>
 
 <div class="container">
 
-    <h1>Update Holiday Information</h1>
-    <form action="{{url('updateHoliday/'.$holiday->holiday_id)}}" method="post">
+    <h1>Update Department Information</h1>
+    <form action="{{url('updateDepartmentName/'.$dep->dep_id)}}" method="post">
         {{csrf_field()}}
         @method('PUT')
-        <label for="holiday_name">Holiday Name</label>
-        <input type="text" name="holiday_name" value="{{$holiday->holiday_name}}">
-        <label for="holiday_date">Holiday Date</label>
-        <input type="date" name="holiday_date" value="{{$holiday->holiday_date}}">
-        <label for="holiday_description">Holiday Description</label>
-        <input type="text" name="holiday_description" value="{{$holiday->holiday_description}}">
+        <label for="dep_name">Department Name</label>
+        <input type="text" name="dep_name" value="{{$dep->dep_name}}">
         <button type="submit" class="btn btn-primary" id="submitButton">Update</button>
-        <button onclick="window.location.href='admin/admin-holiday'">Cancel</button>
+        <a href="{{url('/admin/admin-department')}}" class="btncancel">Cancel</a>
+
     </form>
 </div>
 <div class="modal" id="myModal">

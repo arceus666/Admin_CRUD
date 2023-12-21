@@ -77,6 +77,15 @@ Route::get('admin/admin-employeetype', function (){
 Route::get('admin/admin_add_emptype', function (){
     return view('admin/admin_add_emptype');
 });
+Route::get('admin-functionality/addemployee', function (){
+    return view('admin-functionality/addemployee');
+});
+Route::get('admin-functionality/editemployee', function (){
+    return view('admin-functionality/editemployee');
+});
+Route::get('admin-functionality/editemployee', function (){
+    return view('admin-functionality/editemployee');
+});
 Route::match(['get', 'post'], 'added', [AddEmployee::class,'added']);
 Route::get('delete/{id}', [AddEmployee::class,'remove']);
 Route::get('edit/{id}', [AddEmployee::class,'edit']);
@@ -93,6 +102,18 @@ Route::get('admin/admin_edit_holiday', function (){
 });
 Route::get('admin/admin_insert_department',function (){
     return view('admin/admin_insert_department');
+});
+Route::get('admin-functionality', function (){
+    return view('admin-functionality/editdepartment');
+});
+Route::get('admin-functionality', function (){
+    return view('admin-functionality/editdepartments');
+});
+Route::get('admin-functionality/adddepartment', function (){
+    return view('admin-functionality/adddepartment');
+});
+Route::get('admin-functionality/insertdepartment', function (){
+    return view('admin-functionality/insertdepartment');
 });
 Route::get('editDepartmentName/{id}', [DepartmentController::class,'editDepartmentName']);
 Route::put('updateDepartmentName/{id}', [DepartmentController::class,'updateDepartmentName']);
@@ -122,6 +143,12 @@ Route::get('admin/admin-shift', function (){
 Route::get('admin/admin_add_shift',function (){
     return view('admin/admin_add_shift');
 });
+Route::get('admin-functionality/addshift', function (){
+   return view('admin-functionality/addshift');
+});
+Route::get('admin-functionality/editshift', function (){
+   return view('admin-functionality/editshift');
+});
 Route::match(['get','post'],'addShift',[ShiftController::class,'addShift']);
 Route::get('editShift/{id}',[ShiftController::class,'editShift']);
 Route::put('updateShift/{id}',[ShiftController::class,'updateShift']);
@@ -137,6 +164,10 @@ Route::get('admin/admin_add_location', function (){
 });
 Route::get('admin/admin_edit_location', function (){
    return view('admin/admin_edit_location');
+});
+
+Route::get('admin-functionality/addlocation', function (){
+   return view('admin-functionality/addlocation');
 });
 Route::match(['get','post'],'addLocation',[LocationController::class,'addLocation']);
 Route::get('editLocation/{id}',[LocationController::class,'editLocation']);
@@ -179,12 +210,24 @@ Route::match(['get','post'],'addLeave',[Leaved::class,'addLeave']);
 Route::get('editOut/{id}', [EmployeeLeave::class, 'editOut']);
 Route::put('update-out/{id}', [EmployeeLeave::class, 'updateOut']);
 Route::get('editLeave/{id}', [EmployeeLeave::class, 'editLeave']);
-Route::put('editLeaveLetter/{id}', [EmployeeLeave::class, 'editletter']);
+Route::put('updateLeave/{id}', [EmployeeLeave::class, 'editletter']);
 Route::get('/employee/employee-department', function (){
     return view('employee/employee-department');
 });
 Route::get('/employee/employee-holiday', function (){
     return view('employee/employee-holiday');
+});
+Route::get('admin-functionality/addholiday', function (){
+    return view('admin-functionality/addholiday');
+});
+Route::get('admin-functionality/editholiday',function (){
+    return view('admin-functionality/editholiday');
+});
+Route::get('admin-functionality/addemployeetype', function (){
+   return view('admin-functionality/addemployeetype');
+});
+Route::get('admin-functionality/editemployeetype', function (){
+    return view('admin-functionality/editemployeetype');
 });
 
 

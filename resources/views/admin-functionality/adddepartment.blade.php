@@ -24,19 +24,20 @@
         <label for="emp_type_id">Employee Type ID</label>
         <select name="emp_type_id">
             @foreach(\App\Models\EmployeeType::pluck('emp_type_id') as $emp_type)
-            <option value="{{$emp_type}}">{{$emp_type}}</option>
+                <option value="{{$emp_type}}">{{$emp_type}}</option>
             @endforeach
         </select>
         <label for="emp_type_id">Department Name</label>
         <select name="dep_name">
             @foreach(\App\Models\Department::pluck('dep_name') as $department)
-            <option value="{{$department}}">{{$department}}</option>
+                <option value="{{$department}}">{{$department}}</option>
             @endforeach
         </select>
         <br>
         <br>
         <hr>
         <button type="submit" id="submitButton">Add Employee Department</button>
+        <a href="{{url('/admin/admin-department')}}" class="btncancel">Cancel</a>
     </form>
 </div>
 <div class="modal" id="myModal">

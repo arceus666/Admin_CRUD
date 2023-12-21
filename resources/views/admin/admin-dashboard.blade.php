@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('cssfile/style.css')}}">
+    <script src="{{asset('https://cdn.jsdelivr.net/npm/chart.js')}}"></script>
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -68,6 +69,12 @@
                 <a href="/admin/admin-shift">
                     <span class="icon"><ion-icon name="time-outline"></ion-icon></span>
                     <span class="title">Shift Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/admin-employeetype">
+                    <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                    <span class="title">EmployeeTypeManagement</span>
                 </a>
             </li>
             <li>
@@ -139,11 +146,48 @@
                     <p>{{$holiday}}</p>
                 </div>
             </div>
+            <canvas id="barGraph" width="300" height="80"></canvas>
         </div>
+        <script>
+            const labels = ['Attendance', 'Employees', 'Departments', 'Holidays'];
+            const dataValues = [{{$data}}, {{$totalEmployees}}, {{$totalDepartments}}, {{$holiday}}];
+            const ctx = document.getElementById('barGraph').getContext('2d');
+
+            const barGraph = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total',
+                        data: dataValues,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
     </div>
 </div>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="module" src="{{asset('https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')}}"></script>
+<script nomodule src="{{asset('https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')}}"></script>
 <script>
     let toggle = document.querySelector('.toggle');
     let navigation = document.querySelector('.navigation');
