@@ -59,8 +59,6 @@ body{
     position: relative;
     display: block flex;
     width: 100%;
-
-
     text-decoration: none;
     color: var(--white);
 }
